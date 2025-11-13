@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "Home": "Strona główna",
+    "Skills": "Umiejętności",
+    "Contacts": "Kontakt"
+  },
+  "header": {
+    "title": "Portfolio Frontend"
+  },
+  "languageMenu": {
+    "label": "Język",
+    "English": "Angielski",
+    "Polish": "Polski"
+  },
+  "home": {
+    "badge": "Frontend Developer",
+    "title": "Tworzę przemyślane, wydajne interfejsy, które zmieniają pomysły w intuicyjne doświadczenia użytkowników.",
+    "description": "Projektuję i buduję nowoczesne aplikacje internetowe, stawiając na przejrzysty design, dostępność oraz łatwą pielęgnację kodu. Zobacz wybrane projekty lub odezwij się, jeśli chcesz nawiązać współpracę.",
+    "primaryCta": "Współpracujmy",
+    "secondaryCta": "Zobacz umiejętności",
+    "projectsSection": {
+      "title": "Wybrane projekty",
+      "subtitle": "Najciekawsze realizacje oraz eksperymenty projektowe.",
+      "viewAll": "Zobacz wszystkie",
+      "ctaLabel": "Zobacz projekt",
+      "projects": [
+        {
+          "id": 1,
+          "title": "Panel planowania podróży",
+          "description": "Responsywny panel, który pomaga planować wyprawy, zarządzać planami oraz monitorować budżet w czasie rzeczywistym.",
+          "badge": "Studium przypadku"
+        },
+        {
+          "id": 2,
+          "title": "Galeria produktowa e-commerce",
+          "description": "Immersyjne przeglądanie produktów z interaktywnymi filtrami, podglądem 3D i naciskiem na dostępność.",
+          "badge": "Studium przypadku"
+        },
+        {
+          "id": 3,
+          "title": "Pakiet do współpracy zespołowej",
+          "description": "Zestaw narzędzi produktywności z tablicami, osiami czasu i współdzieleniem treści w czasie rzeczywistym.",
+          "badge": "Studium przypadku"
+        }
+      ]
+    }
+  },
+  "skills": {
+    "badge": "Umiejętności",
+    "title": "Zestaw narzędzi do tworzenia angażujących doświadczeń w sieci.",
+    "description": "Od przekładania projektów na gotowe interfejsy po optymalizację wydajności i dostępności — to umiejętności, na których polegam, aby dostarczać dopracowane produkty.",
+    "categories": [
+      {
+        "title": "Frontend w praktyce",
+        "items": [
+          "HTML5 i semantyka",
+          "CSS3 i Tailwind CSS",
+          "JavaScript (ES2023)",
+          "TypeScript"
+        ]
+      },
+      {
+        "title": "Frameworki i biblioteki",
+        "items": [
+          "React i Next.js",
+          "React Query i SWR",
+          "Framer Motion",
+          "Testing Library i Vitest"
+        ]
+      },
+      {
+        "title": "Narzędzia i proces",
+        "items": [
+          "Git i GitHub",
+          "Figma i przekazywanie projektów",
+          "CI/CD",
+          "Audyt wydajności"
+        ]
+      }
+    ],
+    "outro": "Stale poznaję nowe narzędzia i dobre praktyki — od systemów projektowych po świeże frameworki — aby tworzyć nowoczesne, wydajne i łatwe w utrzymaniu produkty."
+  },
+  "contacts": {
+    "badge": "Kontakt",
+    "title": "Stwórzmy coś razem.",
+    "description": "Masz pomysł na produkt, gotowy projekt do wdrożenia, a może chcesz po prostu przywitać się? Wybierz kanał, który najbardziej Ci odpowiada.",
+    "cards": [
+      {
+        "id": "email",
+        "title": "E-mail",
+        "description": "Wolisz dokładny opis? Napisz wiadomość z kontekstem projektu lub krótkim przywitaniem.",
+        "href": "mailto:hello@example.com",
+        "label": "hello@example.com",
+        "external": false
+      },
+      {
+        "id": "linkedin",
+        "title": "LinkedIn",
+        "description": "Połączmy się i porozmawiajmy o pracy, możliwościach współpracy albo wspólnych zainteresowaniach.",
+        "href": "https://www.linkedin.com/",
+        "label": "Połącz na LinkedIn",
+        "external": true
+      },
+      {
+        "id": "github",
+        "title": "GitHub",
+        "description": "Zajrzyj do eksperymentów, wkładów open source oraz pomysłów w toku.",
+        "href": "https://github.com/",
+        "label": "Profil na GitHubie",
+        "external": true
+      }
+    ],
+    "outro": "Pracuję zdalnie w Twojej ulubionej strefie czasowej. Dostępny na projekty freelancerskie, pełnoetatowe i wystąpienia."
+  },
+  "footer": {
+    "text": "© {{year}} Frontend Portfolio. Wszelkie prawa zastrzeżone."
+  }
+}
+

@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 const skills = [
   {
     title: "Core Frontend",
@@ -14,19 +16,19 @@ const skills = [
 ];
 
 export default function SkillsPage() {
+  const t = useTranslations('skills');
+  
   return (
     <div className="flex flex-col gap-10">
       <header className="space-y-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-indigo-500">
-          Skills
+          {t('badge')}
         </p>
         <h1 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
-          A toolkit for building delightful web experiences.
+          {t('title')}
         </h1>
         <p className="max-w-2xl text-base text-zinc-600">
-          From translating designs into production-ready interfaces to optimizing
-          performance and accessibility, these are the skills I lean on to ship
-          quality work.
+          {t('description')}
         </p>
       </header>
 
@@ -53,9 +55,7 @@ export default function SkillsPage() {
 
       <section className="rounded-2xl border border-dashed border-indigo-200 bg-indigo-50/50 p-6 text-sm text-indigo-800">
         <p>
-          I continuously explore new tools and best practices—from design systems
-          to emerging frameworks—to keep projects modern, efficient, and
-          maintainable.
+          {t('outro')}
         </p>
       </section>
     </div>

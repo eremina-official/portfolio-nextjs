@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "Home": "Home",
+    "Skills": "Skills",
+    "Contacts": "Contacts"
+  },
+  "header": {
+    "title": "Portfolio Frontend"
+  },
+  "languageMenu": {
+    "label": "Language",
+    "English": "English",
+    "Polish": "Polish"
+  },
+  "home": {
+    "badge": "Frontend Developer",
+    "title": "Crafting thoughtful, performant interfaces that turn ideas into intuitive user experiences.",
+    "description": "I design and build modern web applications with a focus on clean design, accessible interactions, and maintainable code. Explore the selected projects below or reach out if you’d like to collaborate.",
+    "primaryCta": "Let’s work together",
+    "secondaryCta": "View skills",
+    "projectsSection": {
+      "title": "Featured projects",
+      "subtitle": "Highlights from recent work and explorations.",
+      "viewAll": "View all",
+      "ctaLabel": "View project",
+      "projects": [
+        {
+          "id": 1,
+          "title": "Travel Planner Dashboard",
+          "description": "A responsive dashboard that helps users plan trips, manage itineraries, and visualize budgets in real time.",
+          "badge": "Case Study"
+        },
+        {
+          "id": 2,
+          "title": "E-commerce Product Gallery",
+          "description": "An immersive product browsing experience with interactive filtering, 3D previews, and accessibility-first design.",
+          "badge": "Case Study"
+        },
+        {
+          "id": 3,
+          "title": "Team Collaboration Suite",
+          "description": "A productivity suite featuring shared boards, task timelines, and seamless real-time collaboration tools.",
+          "badge": "Case Study"
+        }
+      ]
+    }
+  },
+  "skills": {
+    "badge": "Skills",
+    "title": "A toolkit for building delightful web experiences.",
+    "description": "From translating designs into production-ready interfaces to optimizing performance and accessibility, these are the skills I lean on to ship quality work.",
+    "categories": [
+      {
+        "title": "Core Frontend",
+        "items": [
+          "HTML5 & Semantic Markup",
+          "CSS3 & Tailwind CSS",
+          "JavaScript (ES2023)",
+          "TypeScript"
+        ]
+      },
+      {
+        "title": "Frameworks & Libraries",
+        "items": [
+          "React & Next.js",
+          "React Query & SWR",
+          "Framer Motion",
+          "Testing Library & Vitest"
+        ]
+      },
+      {
+        "title": "Tooling & Workflow",
+        "items": [
+          "Git & GitHub",
+          "Figma & Design Handoff",
+          "CI/CD Pipelines",
+          "Performance Auditing"
+        ]
+      }
+    ],
+    "outro": "I continuously explore new tools and best practices—from design systems to emerging frameworks—to keep projects modern, efficient, and maintainable."
+  },
+  "contacts": {
+    "badge": "Contact",
+    "title": "Let’s create something together.",
+    "description": "Whether you have a product idea, a design ready to be implemented, or you simply want to say hello, feel free to reach out through any of the channels below.",
+    "cards": [
+      {
+        "id": "email",
+        "title": "Email",
+        "description": "Prefer a written overview? Send me a message with project context or a quick hello.",
+        "href": "mailto:hello@example.com",
+        "label": "hello@example.com",
+        "external": false
+      },
+      {
+        "id": "linkedin",
+        "title": "LinkedIn",
+        "description": "Let’s connect and chat about work, collaboration opportunities, or shared interests.",
+        "href": "https://www.linkedin.com/",
+        "label": "Connect on LinkedIn",
+        "external": true
+      },
+      {
+        "id": "github",
+        "title": "GitHub",
+        "description": "Explore more experiments, open-source contributions, and in-progress ideas.",
+        "href": "https://github.com/",
+        "label": "View GitHub Profile",
+        "external": true
+      }
+    ],
+    "outro": "Located in your favorite time zone. Available for freelance projects, full-time roles, and speaking engagements."
+  },
+  "footer": {
+    "text": "© {{year}} Frontend Portfolio. All rights reserved."
+  }
+}
+

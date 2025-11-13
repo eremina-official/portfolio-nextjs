@@ -1,13 +1,15 @@
 import Link from "next/link";
 import type { Project } from "@/types/projectTypes";
+import { useTranslations } from "next-intl";
 
 type CardProps = {
   project: Project;
 };
 
 export function Card({ project }: CardProps) {
+  const t = useTranslations('home');
   const { id, title, description, href, badge, tech } = project;
-
+  
   return (
     <article key={id} className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
       <div className="flex items-center justify-between">
@@ -35,7 +37,7 @@ export function Card({ project }: CardProps) {
         href={href}
         className="mt-6 inline-flex items-center text-sm font-medium text-indigo-600 transition hover:text-indigo-500"
       >
-        View project
+        {t(`projectsSection.ctaLabel`)}
         <span aria-hidden className="ml-1 transition group-hover:translate-x-1">
           →
         </span>
