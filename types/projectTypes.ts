@@ -4,6 +4,4 @@ export interface Project {
   description: string;
   tech: string[];
   href: string;
-  badge?: string;
 }
-

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity } from "@/components/Activity";
+import { NavBar } from "@/components/Activity";
 import { useTranslations } from "next-intl";
 
 export function Header() {
@@ -11,7 +11,7 @@ export function Header() {
         <Link href="/" className="text-lg font-semibold tracking-tight text-zinc-900">
           {t("title")}
         </Link>
-        <Activity />
+        <NavBar />
       </div>
     </header>
   );

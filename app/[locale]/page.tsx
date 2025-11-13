@@ -8,9 +8,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-16">
       <section className="flex flex-col gap-6">
-        <p className="text-sm font-semibold uppercase tracking-widest text-indigo-500">
-          {t("badge")}
-        </p>
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">{t("badge")}</p>
         <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
           {t("title")}
         </h1>
@@ -18,13 +16,13 @@ export default function Home() {
         <div className="flex flex-wrap gap-4">
           <Link
             href="/contacts"
-            className="rounded-full bg-indigo-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-indigo-500"
+            className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-white transition hover:bg-primary"
           >
             {t("primaryCta")}
           </Link>
           <Link
             href="/skills"
-            className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-800 transition hover:border-indigo-200 hover:text-indigo-600"
+            className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-800 transition hover:border-indigo-200 hover:text-primary"
           >
             {t("secondaryCta")}
           </Link>
@@ -39,7 +37,7 @@ export default function Home() {
           </div>
           <Link
             href="#"
-            className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 sm:inline-block"
+            className="hidden text-sm font-medium text-primary hover:text-primary-dark sm:inline-block"
           >
             {t("projectsSection.viewAll")}
           </Link>
