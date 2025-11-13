@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import {routing} from '@/i18n/routing';
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 
 const geistSans = Geist({
@@ -18,22 +18,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Frontend Developer Portfolio",
-  description:
-    "Showcasing work, skills, and contact information for a frontend developer.",
+  description: "Showcasing work, skills, and contact information for a frontend developer.",
 };
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 };
 
-export default async function RootLayout({
-  children,
-  params,
-}: Props) {
-  console.log('locale');
+export default async function RootLayout({ children, params }: Props) {
+  console.log("locale");
 
-  const {locale} = await params;
+  const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -50,8 +46,7 @@ export default async function RootLayout({
               <div className="mx-auto w-full max-w-5xl px-6 py-16">{children}</div>
             </main>
             <footer className="border-t border-zinc-200 bg-white/80 py-6 text-center text-sm text-zinc-500">
-              © {new Date().getFullYear()} Frontend Portfolio. All rights
-              reserved.
+              © {new Date().getFullYear()} Frontend Portfolio. All rights reserved.
             </footer>
           </div>
         </NextIntlClientProvider>

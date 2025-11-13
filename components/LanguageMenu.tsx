@@ -1,7 +1,7 @@
 "use client";
 
 import { useTransition, useState } from "react";
-import {useLocale, useTranslations} from 'next-intl';
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 
 export type LanguageOption = {
@@ -16,23 +16,23 @@ const languages = [
 ];
 
 export function LanguageMenu() {
-  const t = useTranslations('languageMenu');
-  const locale = useLocale() || 'en';
+  const t = useTranslations("languageMenu");
+  const locale = useLocale() || "en";
   const pathname = usePathname();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const currentLanguage = languages.find((language) => language.code === locale);
   const [isOpen, setIsOpen] = useState(false);
-console.log('pathname', pathname);
+
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
   const handleSelect = (code: string) => {
-    console.log('code', code);
     startTransition(() => {
       router.replace(pathname, { locale: code });
-    });  };
+    });
+  };
 
   return (
     <>
@@ -47,6 +47,7 @@ console.log('pathname', pathname);
           <span aria-hidden>{currentLanguage?.flag}</span>
           <span>{currentLanguage?.label}</span>
         </button>
+
         {isOpen ? (
           <div className="absolute right-0 z-50 mt-2 w-48 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg">
             {currentLanguage?.label ? (
@@ -62,9 +63,7 @@ console.log('pathname', pathname);
                     key={language.code}
                     type="button"
                     className={`flex items-center gap-2 px-4 py-3 text-left text-sm transition ${
-                      isActive
-                        ? "bg-indigo-50 text-indigo-600"
-                        : "text-zinc-600 hover:bg-zinc-50"
+                      isActive ? "bg-indigo-50 text-indigo-600" : "text-zinc-600 hover:bg-zinc-50"
                     }`}
                     onClick={() => handleSelect(language.code)}
                     disabled={isPending}
@@ -90,4 +89,3 @@ console.log('pathname', pathname);
     </>
   );
 }
-

@@ -19,7 +19,7 @@ const navLinks: NavLink[] = [
 
 export function Activity() {
   const pathname = usePathname();
-  const t = useTranslations('nav');
+  const t = useTranslations("nav");
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
@@ -126,4 +126,3 @@ export function Activity() {
     </>
   );
 }
-

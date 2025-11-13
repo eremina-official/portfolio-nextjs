@@ -16,20 +16,16 @@ const skills = [
 ];
 
 export default function SkillsPage() {
-  const t = useTranslations('skills');
-  
+  const t = useTranslations("skills");
+
   return (
     <div className="flex flex-col gap-10">
       <header className="space-y-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-indigo-500">
-          {t('badge')}
+          {t("badge")}
         </p>
-        <h1 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
-          {t('title')}
-        </h1>
-        <p className="max-w-2xl text-base text-zinc-600">
-          {t('description')}
-        </p>
+        <h1 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">{t("title")}</h1>
+        <p className="max-w-2xl text-base text-zinc-600">{t("description")}</p>
       </header>
 
       <section className="grid gap-6 md:grid-cols-3">
@@ -38,13 +34,13 @@ export default function SkillsPage() {
             key={category.title}
             className="flex flex-col gap-4 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
           >
-            <h2 className="text-lg font-semibold text-zinc-900">
-              {category.title}
-            </h2>
+            <h2 className="text-lg font-semibold text-zinc-900">{category.title}</h2>
             <ul className="flex flex-col gap-2 text-sm text-zinc-600">
               {category.items.map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <span aria-hidden className="text-indigo-500">▹</span>
+                  <span aria-hidden className="text-indigo-500">
+                    ▹
+                  </span>
                   {item}
                 </li>
               ))}
@@ -54,11 +50,8 @@ export default function SkillsPage() {
       </section>
 
       <section className="rounded-2xl border border-dashed border-indigo-200 bg-indigo-50/50 p-6 text-sm text-indigo-800">
-        <p>
-          {t('outro')}
-        </p>
+        <p>{t("outro")}</p>
       </section>
     </div>
   );
 }
-
