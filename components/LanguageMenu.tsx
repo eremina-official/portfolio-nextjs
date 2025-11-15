@@ -1,10 +1,11 @@
 "use client";
 
-import { useTransition, useState } from "react";
+import { useTransition, useState, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { AnimatePresence } from "motion/react";
 import { motion } from "motion/react";
+import useClickOutside from "@/hooks/useClickOutside";
 
 export type LanguageOption = {
   code: string;
@@ -22,9 +23,11 @@ export function LanguageMenu() {
   const locale = useLocale() || "en";
   const pathname = usePathname();
   const router = useRouter();
+  const ref = useRef<HTMLDivElement | undefined>(undefined);
   const [isPending, startTransition] = useTransition();
   const currentLanguage = languages.find((language) => language.code === locale);
   const [isOpen, setIsOpen] = useState(false);
+  useClickOutside(ref, () => setIsOpen(false));
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -38,7 +41,7 @@ export function LanguageMenu() {
 
   return (
     <>
-      <div className="relative">
+      <div ref={ref} className="relative">
         <button
           type="button"
           className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-600"
