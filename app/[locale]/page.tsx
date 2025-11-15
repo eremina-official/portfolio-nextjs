@@ -2,17 +2,39 @@ import Link from "next/link";
 import { Card } from "@/components/Card";
 import { projects } from "@/data/projects";
 import { useTranslations } from "next-intl";
+import * as motion from "motion/react-client";
 
 export default function Home() {
   const t = useTranslations("home");
+
   return (
     <div className="flex flex-col gap-16">
       <section className="flex flex-col gap-6">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">{t("badge")}</p>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
+
+        <motion.h1
+          initial={{ backgroundPositionX: "0%" }}
+          animate={{ backgroundPositionX: "100%" }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            repeatType: "reverse", // reverses the motion
+            ease: "linear",
+          }}
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, oklch(0.5461 0.2152 262.88), oklch(0.6268 0.2325 303.9))",
+            backgroundSize: "300% 100%",
+            WebkitBackgroundClip: "text",
+            color: "transparent",
+          }}
+          className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl"
+        >
           {t("title")}
-        </h1>
+        </motion.h1>
+
         <p className="max-w-2xl text-lg text-zinc-600">{t("description")}</p>
+
         <div className="flex flex-wrap gap-4">
           <Link
             href="/contacts"

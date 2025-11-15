@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0F0F10;
+  --color-background: oklch(0.96 0.0054 297.72);
   --color-surface: #f4f4f6;
   --color-primary: oklch(0.5461 0.2152 262.88);
-  --color-accent: oklch(0.702 0.306 247);
+  --color-accent: oklch(0.6268 0.2325 303.9);
   --color-text: #F9FAFB;
   --color-subtext: #9CA3AF;
   --color-primary-light: oklch(from var(--color-primary) l c h / 0.5);
@@ -28,7 +28,7 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--color-background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;

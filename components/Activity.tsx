@@ -62,7 +62,7 @@ export function NavBar() {
   }, [pathname]);
 
   return (
-    <div className="relative flex items-center justify-between bg-white">
+    <div className="relative flex items-center justify-between">
       {/* mobile menu button */}
       <button
         type="button"
