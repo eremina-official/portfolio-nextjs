@@ -86,28 +86,19 @@
     "description": "Masz pomysł na produkt, gotowy projekt do wdrożenia, a może chcesz po prostu przywitać się? Wybierz kanał, który najbardziej Ci odpowiada.",
     "cards": [
       {
-        "id": "email",
         "title": "E-mail",
         "description": "Wolisz dokładny opis? Napisz wiadomość z kontekstem projektu lub krótkim przywitaniem.",
-        "href": "mailto:hello@example.com",
-        "label": "hello@example.com",
-        "external": false
+        "label": "hello@example.com"
       },
       {
-        "id": "linkedin",
         "title": "LinkedIn",
         "description": "Połączmy się i porozmawiajmy o pracy, możliwościach współpracy albo wspólnych zainteresowaniach.",
-        "href": "https://www.linkedin.com/",
-        "label": "Połącz na LinkedIn",
-        "external": true
+        "label": "Połącz na LinkedIn"
       },
       {
-        "id": "github",
         "title": "GitHub",
         "description": "Zajrzyj do eksperymentów, wkładów open source oraz pomysłów w toku.",
-        "href": "https://github.com/",
-        "label": "Profil na GitHubie",
-        "external": true
+        "label": "Profil na GitHubie"
       }
     ],
     "outro": "Pracuję zdalnie w Twojej ulubionej strefie czasowej. Dostępny na projekty freelancerskie, pełnoetatowe i wystąpienia."

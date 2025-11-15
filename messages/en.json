@@ -86,28 +86,19 @@
     "description": "Whether you have a product idea, a design ready to be implemented, or you simply want to say hello, feel free to reach out through any of the channels below.",
     "cards": [
       {
-        "id": "email",
-        "title": "Email",
-        "description": "Prefer a written overview? Send me a message with project context or a quick hello.",
-        "href": "mailto:hello@example.com",
-        "label": "hello@example.com",
-        "external": false
+        "title": "Medium",
+        "description": "Stay updated on my latest thoughts, projects, and insights.",
+        "label": "View Medium Profile"
       },
       {
-        "id": "linkedin",
         "title": "LinkedIn",
         "description": "Let’s connect and chat about work, collaboration opportunities, or shared interests.",
-        "href": "https://www.linkedin.com/",
-        "label": "Connect on LinkedIn",
-        "external": true
+        "label": "Connect on LinkedIn"
       },
       {
-        "id": "github",
         "title": "GitHub",
         "description": "Explore more experiments, open-source contributions, and in-progress ideas.",
-        "href": "https://github.com/",
-        "label": "View GitHub Profile",
-        "external": true
+        "label": "View GitHub Profile"
       }
     ],
     "outro": "Located in your favorite time zone. Available for freelance projects, full-time roles, and speaking engagements."
