@@ -30,7 +30,7 @@ export default function ContactCard({
       <Link href={href} className="flex flex-col" {...linkProps}>
         <h2 className="text-sm font-semibold uppercase tracking-wide text-primary">{title}</h2>
         <p className="mt-3 text-sm text-zinc-600">{description}</p>
-        <p className="mt-5 inline-flex items-center text-sm font-medium text-primary transition hover:text-primary">
+        <p className="mt-5 inline-flex items-center text-sm font-medium text-primary">
           {label}
           <span aria-hidden className="ml-1">
             ↗

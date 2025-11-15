@@ -13,16 +13,16 @@ export function Card({ project }: CardProps) {
   return (
     <article
       key={id}
-      className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+      className="group flex flex-col rounded-2xl border border-border-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
     >
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-zinc-900">{title}</h3>
+        <h3 className="text-lg font-semibold text-text">{title}</h3>
       </div>
-      <p className="mt-3 flex-1 text-sm text-zinc-600">{description}</p>
+      <p className="mt-3 flex-1 text-sm text-subtext">{description}</p>
       {tech.length ? (
-        <ul className="mt-4 flex flex-wrap gap-2 text-xs text-zinc-500">
+        <ul className="mt-4 flex flex-wrap gap-2 text-sm text-zinc-500">
           {tech.map((item) => (
-            <li key={item} className="rounded-full bg-indigo-50 px-3 py-1 text-primary">
+            <li key={item} className="rounded-full bg-indigo-50 px-5 py-2 text-accent">
               {item}
             </li>
           ))}

@@ -4,11 +4,20 @@
   --color-background: oklch(0.96 0.0054 297.72);
   --color-surface: #f4f4f6;
   --color-primary: oklch(0.5461 0.2152 262.88);
-  --color-accent: oklch(0.6268 0.2325 303.9);
+  --color-accent: var(--color-deep-raspberry);
   --color-text: oklch(21% 0.006 285.885);
   --color-subtext: oklch(44.2% 0.017 285.786);
-  --color-primary-light: oklch(from var(--color-primary) l c h / 0.5);
+  
+  --color-primary-10: oklch(from var(--color-primary) calc(l + 1.5) c h);
+  --color-primary-transparent: oklch(from var(--color-primary) l c h / 0.5);
   --color-primary-dark: oklch(from var(--color-primary) calc(l - 0.2) c h);
+
+  --color-deep-raspberry: oklch(0.50 0.22 350);
+  --color-deep-raspberry-light: oklch(from var(--color-deep-raspberry) l c h / 0.7);
+  --color-royal-violet: oklch(0.45 0.22 270);
+  --color-dark-graphite: oklch(0.40 0.02 260);
+
+  --color-border-200: oklch(92% 0.004 286.32);
 }
 
 /* @theme light {

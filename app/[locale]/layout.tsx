@@ -43,9 +43,9 @@ export default async function RootLayout({ children, params }: Props) {
           <div className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">
-              <div className="mx-auto w-full max-w-5xl px-6 py-16">{children}</div>
+              <div className="mx-auto w-full max-w-7xl px-6 py-16">{children}</div>
             </main>
-            <footer className="border-t border-zinc-200 bg-white/80 py-6 text-center text-sm text-zinc-500">
+            <footer className="border-t border-border-200 bg-background py-6 text-center text-sm text-zinc-500">
               © {new Date().getFullYear()} Frontend Portfolio. All rights reserved.
             </footer>
           </div>

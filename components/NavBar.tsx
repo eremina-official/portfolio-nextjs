@@ -61,6 +61,14 @@ export function NavBar() {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsNavOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
     <div className="relative flex items-center justify-between">
       {/* mobile menu button */}
@@ -68,6 +76,8 @@ export function NavBar() {
         type="button"
         className="inline-flex items-center justify-center rounded-full border border-zinc-300 p-2 text-sm text-zinc-700 transition hover:border-primary-light hover:text-primary md:hidden cursor-pointer"
         aria-label="Toggle navigation"
+        aria-expanded={isNavOpen}
+        aria-controls="mobile-menu"
         onClick={toggleNav}
       >
         <div className="flex flex-col gap-1.5">
@@ -100,8 +110,8 @@ export function NavBar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`transition-colors p-10 md:p-3 font-semibold ${index !== navLinks.length - 1 ? "border-b" : ""} md:border-none border-zinc-300 whitespace-nowrap cursor-pointer hover:bg-zinc-100 ${
-                  isActive ? "bg-zinc-100" : ""
+                className={`transition-colors p-10 md:p-3 font-semibold ${index !== navLinks.length - 1 ? "border-b" : ""} md:border-none md:rounded-xl border-zinc-300 whitespace-nowrap cursor-pointer active:bg-zinc-100 ${
+                  isActive ? "bg-zinc-300" : ""
                 }`}
               >
                 {t(link.label)}

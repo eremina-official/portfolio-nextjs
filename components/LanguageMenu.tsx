@@ -44,7 +44,7 @@ export function LanguageMenu() {
       <div ref={ref} className="relative">
         <button
           type="button"
-          className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-600"
+          className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-subtext shadow-sm transition hover:border-primary-light hover:text-primary"
           aria-haspopup="true"
           aria-expanded={isOpen}
           onClick={toggleMenu}
@@ -65,10 +65,10 @@ export function LanguageMenu() {
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.2 }}
-              className="absolute right-0 z-50 mt-2 w-48 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg"
+              className="absolute right-0 z-50 mt-2 w-48 overflow-hidden rounded-xl border border-border-200 bg-white shadow-lg"
             >
               {currentLanguage?.label ? (
-                <p className="px-4 py-2 text-xs font-semibold uppercase tracking-widest text-zinc-400">
+                <p className="px-4 py-2 text-xs font-semibold uppercase tracking-widest text-subtext">
                   {currentLanguage?.label}
                 </p>
               ) : null}
@@ -79,8 +79,8 @@ export function LanguageMenu() {
                     <button
                       key={language.code}
                       type="button"
-                      className={`flex items-center gap-2 px-4 py-3 text-left text-sm transition ${
-                        isActive ? "bg-indigo-50 text-indigo-600" : "text-zinc-600 hover:bg-zinc-50"
+                      className={`flex items-center gap-2 px-4 py-3 text-sm text-left transition ${
+                        isActive ? "bg-indigo-50 text-primary" : "text-text hover:bg-zinc-50"
                       }`}
                       onClick={() => handleSelect(language.code)}
                       disabled={isPending}

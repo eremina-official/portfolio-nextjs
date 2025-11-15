@@ -13,22 +13,20 @@ export default function Home() {
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">{t("badge")}</p>
 
         <motion.h1
-          initial={{ backgroundPositionX: "0%" }}
-          animate={{ backgroundPositionX: "100%" }}
+          initial={{ y: 6, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{
-            duration: 6,
-            repeat: Infinity,
-            repeatType: "reverse", // reverses the motion
+            duration: 0.3,
             ease: "linear",
           }}
           style={{
             backgroundImage:
-              "linear-gradient(90deg, oklch(0.5461 0.2152 262.88), oklch(0.6268 0.2325 303.9))",
-            backgroundSize: "300% 100%",
+              "linear-gradient(90deg, oklch(0.5461 0.2152 262.88), oklch(0.50 0.22 350))",
+            backgroundSize: "100% 100%",
             WebkitBackgroundClip: "text",
             color: "transparent",
           }}
-          className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl"
+          className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl"
         >
           {t("title")}
         </motion.h1>
