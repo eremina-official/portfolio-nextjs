@@ -37,7 +37,7 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-zinc-50 text-zinc-900 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-zinc-50 text-zinc-900 antialiased overflow-x-hidden`}
       >
         <NextIntlClientProvider>
           <div className="flex min-h-screen flex-col">
