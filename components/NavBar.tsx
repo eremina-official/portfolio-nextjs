@@ -5,7 +5,6 @@ import Link from "next/link";
 import { LanguageMenu } from "@/components/LanguageMenu";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { motion } from "motion/react";
 
 type NavLink = {
   href: string;
@@ -27,7 +26,9 @@ export function NavBar() {
   const navClassNames = `
   flex flex-col md:flex-row
   md:static md:translate-x-0 md:bg-transparent md:shadow-none
-  absolute top-10 right-0 w-[35vw] bg-surface shadow-lg rounded-2xl md:rounded-none
+  absolute top-10 right-[-25] w-[50vw] bg-surface shadow-lg rounded-2xl md:rounded-none
+  transform transition-transform duration-300 ease-in-out
+  ${isNavOpen ? "translate-x-0" : "translate-x-full"}
   md:items-center md:h-auto md:w-auto md:p-0 overflow-hidden
 `;
 
@@ -37,7 +38,8 @@ export function NavBar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= mdBreakpoint) {
+      const md = window.matchMedia(`(min-width: ${mdBreakpoint}px)`);
+      if (md.matches) {
         setIsNavOpen(true);
       } else {
         setIsNavOpen(false);
@@ -53,11 +55,8 @@ export function NavBar() {
 
   useEffect(() => {
     // Only run on client
-    if (window.innerWidth >= 768) {
-      setIsNavOpen(true);
-    } else {
-      setIsNavOpen(false);
-    }
+    const md = window.matchMedia(`(min-width: ${mdBreakpoint}px)`);
+    setIsNavOpen(md.matches);
   }, [pathname]);
 
   useEffect(() => {
@@ -99,38 +98,25 @@ export function NavBar() {
       </button>
 
       <div className="relative flex items-center gap-4">
-        {isNavOpen && (
-          <motion.nav
-            key="nav"
-            className={navClassNames}
-            initial={{ x: "100%" }}
-            animate="visible"
-            exit="hidden"
-            variants={{
-              hidden: { opacity: 0, x: "100%" },
-              visible: { opacity: 1, x: 0 },
-            }}
-            transition={{ duration: 0.2 }}
-          >
-            {navLinks.map((link, index) => {
-              const normalizedPath =
-                pathname === "/" ? "/" : pathname.replace(/^\/[^/]+(?=\/|$)/, "");
-              const isActive = normalizedPath === link.href;
+        <nav className={navClassNames}>
+          {navLinks.map((link, index) => {
+            const normalizedPath =
+              pathname === "/" ? "/" : pathname.replace(/^\/[^/]+(?=\/|$)/, "");
+            const isActive = normalizedPath === link.href;
 
-              return (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={`transition-colors p-10 md:p-3 font-semibold ${index !== navLinks.length - 1 ? "border-b" : ""} md:border-none md:rounded-xl border-zinc-300 whitespace-nowrap cursor-pointer active:bg-zinc-100 ${
-                    isActive ? "bg-zinc-300" : ""
-                  }`}
-                >
-                  {t(link.label)}
-                </Link>
-              );
-            })}
-          </motion.nav>
-        )}
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`transition-colors p-10 md:p-3 font-semibold ${index !== navLinks.length - 1 ? "border-b" : ""} md:border-none md:rounded-xl border-zinc-300 whitespace-nowrap cursor-pointer active:bg-zinc-100 ${
+                  isActive ? "bg-zinc-300" : ""
+                }`}
+              >
+                {t(link.label)}
+              </Link>
+            );
+          })}
+        </nav>
 
         <div className="mx-auto hidden md:block">
           <LanguageMenu />
