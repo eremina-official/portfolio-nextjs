@@ -23,7 +23,7 @@ export function LanguageMenu() {
   const locale = useLocale() || "en";
   const pathname = usePathname();
   const router = useRouter();
-  const ref = useRef<HTMLDivElement | undefined>(undefined);
+  const ref = useRef<HTMLDivElement | null>(null);
   const [isPending, startTransition] = useTransition();
   const currentLanguage = languages.find((language) => language.code === locale);
   const [isOpen, setIsOpen] = useState(false);

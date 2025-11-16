@@ -30,6 +30,7 @@ const skills = [
       "CI/CD Pipelines",
       "Vercel",
       "Performance Auditing",
+      "AI Tools (Cursor, GitHub Copilot)",
     ],
   },
 ];

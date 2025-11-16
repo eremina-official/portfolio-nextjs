@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
-type Ref = React.RefObject<HTMLDivElement | undefined>;
+type Ref = React.RefObject<HTMLDivElement | null>;
 
 export default function useClickOutside(
   refs: Ref | Ref[],
