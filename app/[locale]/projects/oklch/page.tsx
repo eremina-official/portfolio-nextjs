@@ -19,47 +19,6 @@ interface memoValueType {
   isValid: boolean;
 }
 
-// export default function OklchDarkModeExample() {
-//   const [isDark, setIsDark] = useState(false);
-
-//   const light = {
-//     bg: "oklch(0.98 0.02 250)",
-//     text: "oklch(0.20 0.02 250)",
-//     primary: "oklch(0.70 0.20 260)",
-//   };
-
-//   const dark = {
-//     bg: "oklch(0.12 0.02 250)",
-//     text: "oklch(0.95 0.02 250)",
-//     primary: "oklch(0.40 0.20 260)",
-//   };
-
-//   const theme = isDark ? dark : light;
-
-//   return (
-//     <div
-//       className="min-h-screen p-10 flex flex-col items-start gap-6 transition-all duration-300"
-//       style={{ background: theme.bg, color: theme.text }}
-//     >
-//       <h1 className="text-3xl font-bold">OKLCH Dark Mode Example</h1>
-
-//       <button
-//         onClick={() => setIsDark((prev) => !prev)}
-//         className="px-4 py-2 rounded-xl shadow text-white"
-//         style={{ background: theme.primary }}
-//       >
-//         Toggle Dark Mode
-//       </button>
-
-//       <p className="max-w-xl text-lg">
-//         This page switches between light and dark mode by changing only the <b>L</b>
-//         (lightness) value of OKLCH colors. Hue and chroma stay the same, so colors remain visually
-//         consistent across themes.
-//       </p>
-//     </div>
-//   );
-// }
-
 export default function OklchSeparateVariantsDemo() {
   const [input, setInput] = useState("oklch(0.6 0.2 260)");
   const [copiedColorKey, setCopiedColorKey] = useState("");
@@ -146,62 +105,110 @@ export default function OklchSeparateVariantsDemo() {
     }
   }, [input]);
 
-  const renderVariant = (variant: Variant): JSX.Element => (
-    <div
-      key={variant.type + variant.value}
-      className="flex-[0_1_30%] group transition-all duration-200 hover:scale-105 hover:shadow-lg"
-    >
+  const formatColorWithHighlight = (color: string, type: string) => {
+    const match = color.match(/oklch\((.+)\)/);
+    if (!match) return color;
+
+    const content = match[1];
+    const parts = content.split(" ");
+
+    // Map type to index in the split array
+    // Format: "L C H" or "L C H / A"
+    // Split: ["L", "C", "H"] or ["L", "C", "H", "/", "A"]
+    let targetIndex = -1;
+    if (type === "L") targetIndex = 0;
+    else if (type === "C") targetIndex = 1;
+    else if (type === "H") targetIndex = 2;
+    else if (type === "A") targetIndex = 4;
+
+    return (
+      <>
+        oklch(
+        {parts.map((part, i) => {
+          const isTarget = i === targetIndex;
+          return (
+            <span
+              key={i}
+              className={isTarget ? "font-bold text-red-500 rounded px-0.5" : ""}
+            >
+              {part}
+              {i < parts.length - 1 ? " " : ""}
+            </span>
+          );
+        })}
+        )
+      </>
+    );
+  };
+
+  const renderVariant = (variant: Variant): JSX.Element => {
+    const isBase = variant.delta === 0;
+
+    return (
       <div
-        className="h-34 rounded-lg shadow-md flex items-end justify-center p-3 relative overflow-hidden"
-        style={{ background: variant.color }}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
+        key={variant.type + variant.value}
+        className={`flex-[0_1_30%] group transition-all duration-200 hover:scale-105 hover:shadow-lg`}
+      >
+        <div
+          className={`h-34 rounded-lg shadow-md flex items-end justify-center p-3 relative overflow-hidden ${
+            isBase ? "ring-4 ring-white/50 shadow-xl" : ""
+          }`}
+          style={{ background: variant.color }}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              navigator.clipboard
+                ?.writeText(variant.color)
+                .then(() => setCopiedColorKey(variant.type + variant.value));
+            }
+          }}
+          onClick={() => {
             navigator.clipboard
               ?.writeText(variant.color)
               .then(() => setCopiedColorKey(variant.type + variant.value));
-          }
-        }}
-        onClick={() => {
-          navigator.clipboard
-            ?.writeText(variant.color)
-            .then(() => setCopiedColorKey(variant.type + variant.value));
-        }}
-      >
-        <div className="absolute inset-0 transition-colors duration-200" />
+          }}
+        >
+          <div className="absolute inset-0 transition-colors duration-200" />
 
-        {/* badge: type + value */}
-        <div className="absolute top-3 left-3 bg-black/20 backdrop-blur-sm rounded px-2 py-1 text-white text-xs font-medium">
-          {variant.type}: {variant.value}
-        </div>
+          {/* badge: type + value */}
+          <div className="absolute top-3 left-3 bg-black/20 backdrop-blur-sm rounded px-2 py-1 text-white text-xs font-medium">
+            {variant.type}: {variant.value}
+          </div>
 
-        {/* full color token (click to copy) */}
-        <div className="absolute bottom-3 left-3 bg-black/20 backdrop-blur-sm rounded px-2 py-1 text-white text-sm font-medium">
-          {variant.color}
-        </div>
+          {/* full color token (click to copy) */}
+          <div
+            className={`absolute bottom-3 left-3 bg-white/90 text-black text-[12px] px-2 py-0.5 rounded-md tracking-wider shadow-sm ${
+              isBase ? "italic" : ""
+            }`}
+          >
+            {formatColorWithHighlight(variant.color, variant.type)}
+          </div>
 
-        {variant.delta === 0 && (
-          <div className="absolute top-2 right-2 w-2 h-2 bg-white rounded-full shadow-sm" />
-        )}
-
-        <AnimatePresence>
-          {copiedColorKey === variant.type + variant.value && (
-            <motion.div
-              className="absolute inset-0 bg-black/40 flex items-center justify-center text-white font-semibold text-lg rounded"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.5 }}
-              onAnimationComplete={() => setCopiedColorKey("")}
-            >
-              Copied!
-            </motion.div>
+          {isBase && (
+            <div className="absolute top-3 right-3 bg-white/90 text-black text-[10px] italic px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+              Base
+            </div>
           )}
-        </AnimatePresence>
+
+          <AnimatePresence>
+            {copiedColorKey === variant.type + variant.value && (
+              <motion.div
+                className="absolute inset-0 bg-black/40 flex items-center justify-center text-white font-semibold text-lg rounded"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.5 }}
+                onAnimationComplete={() => setCopiedColorKey("")}
+              >
+                Copied!
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const renderSection = (title: string, variants: Variant[], description: string): JSX.Element => (
     <div
@@ -241,23 +248,23 @@ export default function OklchSeparateVariantsDemo() {
           </p>
         </div>
 
-        {/* Toggle Dark Mode section */}
-        <button
-          onClick={() => setDarkMode((prev) => !prev)}
-          className="px-4 py-2 rounded-xl shadow bg-(--color-oklch-primary) text-(--color-oklch-text)"
-        >
-          Toggle Dark Mode
-        </button>
-
-        <p className="max-w-xl text-lg text-(--color-oklch-text)">
-          This page switches between light and dark mode by changing only the <b>L</b>
-          (lightness) value of OKLCH colors. Hue and chroma stay the same, so colors remain visually
-          consistent across themes.
-        </p>
 
         {/* Input Section */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 mb-8">
-          <label className="block text-sm font-medium text-gray-600 mb-2">OKLCH Color Input</label>
+          <div className="flex justify-between items-center mb-2">
+            <label className="block text-sm font-medium text-gray-600">OKLCH Color Input</label>
+            <button
+              onClick={() => {
+                const l = (Math.random() * 0.5 + 0.3).toFixed(2);
+                const c = (Math.random() * 0.25).toFixed(2);
+                const h = Math.floor(Math.random() * 360);
+                setInput(`oklch(${l} ${c} ${h})`);
+              }}
+              className="text-xs font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors"
+            >
+              🎲 Random Color
+            </button>
+          </div>
           <div className="relative">
             <input
               value={input}
@@ -306,6 +313,68 @@ export default function OklchSeparateVariantsDemo() {
             )}
           </div>
         )}
+
+
+        {/* Theme Controller & Context */}
+        <div className="top-4 z-50 mt-16">
+          <div className="bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-4 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-base font-semibold text-gray-900">Theme</h2>
+              <p className="text-gray-500 text-xs hidden md:block">
+                Switching modes only affects <b>L</b> (lightness). Hue/Chroma stay constant.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 bg-gray-100/80 p-1 rounded-xl border border-gray-200/50">
+              <button
+                onClick={() => setDarkMode(false)}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                  !darkMode
+                    ? "bg-white text-gray-900 shadow-sm ring-1 ring-black/5"
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+                Light
+              </button>
+              <button
+                onClick={() => setDarkMode(true)}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                  darkMode
+                    ? "bg-gray-800 text-white shadow-sm ring-1 ring-black/5"
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+                Dark
+              </button>
+            </div>
+          </div>
+        </div>
 
         {/* Info Footer */}
         <div className="mt-16 text-center">
