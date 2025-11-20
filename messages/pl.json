@@ -23,26 +23,24 @@
       "subtitle": "Najciekawsze realizacje oraz eksperymenty projektowe.",
       "viewAll": "Zobacz wszystkie",
       "ctaLabel": "Zobacz projekt",
-      "projects": [
-        {
-          "id": 1,
-          "title": "Panel planowania podróży",
-          "description": "Responsywny panel, który pomaga planować wyprawy, zarządzać planami oraz monitorować budżet w czasie rzeczywistym.",
+      "comingSoon": "Wkrótce",
+      "projects":  {
+        "1": {
+          "title": "OKLCH Color Explorer",
+          "description": "Eksploruj, jak zmiany Jasności, Chromy, Odcienia i Przezroczystości wpływają na kolory OKLCH. Kliknij dowolny kolor, aby skopiować jego wartość.",
           "badge": "Studium przypadku"
         },
-        {
-          "id": 2,
+        "2": {
           "title": "Galeria produktowa e-commerce",
           "description": "Immersyjne przeglądanie produktów z interaktywnymi filtrami, podglądem 3D i naciskiem na dostępność.",
           "badge": "Studium przypadku"
         },
-        {
-          "id": 3,
-          "title": "Pakiet do współpracy zespołowej",
-          "description": "Zestaw narzędzi produktywności z tablicami, osiami czasu i współdzieleniem treści w czasie rzeczywistym.",
+        "3": {
+          "title": "Strona roleplaying EWF Wrestling",
+          "description": "Przeniesienie wordpress site z EWF wrestling roleplaying page do nextjs",
           "badge": "Studium przypadku"
         }
-      ]
+      }
     }
   },
   "skills": {

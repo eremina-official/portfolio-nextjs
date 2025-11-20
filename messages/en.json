@@ -23,26 +23,24 @@
       "subtitle": "Highlights from recent work and explorations.",
       "viewAll": "View all",
       "ctaLabel": "View project",
-      "projects": [
-        {
-          "id": 1,
-          "title": "Travel Planner Dashboard",
-          "description": "A responsive dashboard that helps users plan trips, manage itineraries, and visualize budgets in real time.",
+      "comingSoon": "Coming soon",
+      "projects": {
+        "1": {
+          "title": "OKLCH Color Explorer",
+          "description": "Explore how Lightness, Chroma, Hue and Alpha variations affect your OKLCH colors. Click any color to copy its value.",
           "badge": "Case Study"
         },
-        {
-          "id": 2,
-          "title": "E-commerce Product Gallery",
+        "2": {
+          "title": "Map showing species distribution",
           "description": "An immersive product browsing experience with interactive filtering, 3D previews, and accessibility-first design.",
           "badge": "Case Study"
         },
-        {
-          "id": 3,
-          "title": "Team Collaboration Suite",
-          "description": "A productivity suite featuring shared boards, task timelines, and seamless real-time collaboration tools.",
+        "3": {
+          "title": "EWF wrestling roleplaying page",
+          "description": "Move wordpress site with EWF wrestling roleplaying page to nextjs",
           "badge": "Case Study"
         }
-      ]
+      }
     }
   },
   "skills": {
