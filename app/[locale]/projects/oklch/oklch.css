@@ -1,13 +1,24 @@
+/* royal blue: oklch(0.5598 0.1882 266.4), #4169E1 */
+/* royal blue rounded for demostration purposes: oklch(0.56 0.19 266) */ 
+
+:root {
+  --color-oklch-bg: oklch(0.98 0.02 250);
+  --color-oklch-text-700: oklch(0.20 0.02 250);
+  --color-oklch-text-600: oklch(0.44 0.03 256.802);
+  --color-royal-blue: oklch(0.56 0.19 266);
+}
+
+
 .page-oklch-theme {
-  --color-oklch-background: oklch(0.98 0.02 250);
-  --color-oklch-text: oklch(0.20 0.02 250);
-  --color-oklch-subtext: oklch(0.44 0.03 256.802);
-  --color-oklch-primary: oklch(0.70 0.20 260);
+  --color-oklch-background: var(--color-oklch-bg);
+  --color-oklch-text: var(--color-oklch-text-700);
+  --color-oklch-subtext: var(--color-oklch-text-600);
+  --color-oklch-primary: var(--color-royal-blue);
 }
 
 .page-oklch-theme-dark {
-  --color-oklch-background: oklch(0.12 0.02 250);
-  --color-oklch-text: oklch(0.95 0.02 250);
-  --color-oklch-subtext: oklch(0.8 0.03 256.802);
-  --color-oklch-primary: oklch(0.40 0.20 260);
+  --color-oklch-background: oklch(from var(--color-oklch-bg) calc(l - 0.86) c h);
+  --color-oklch-text: oklch(from var(--color-oklch-text-700) calc(l + 0.75) c h);
+  --color-oklch-subtext: oklch(from var(--color-oklch-text-600) calc(l + 0.36) c h);
+  --color-oklch-primary: oklch(from var(--color-royal-blue) calc(l - 0.2) c h);
 }

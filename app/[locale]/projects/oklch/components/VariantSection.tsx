@@ -1,6 +1,7 @@
 import { JSX } from "react";
 import { Variant } from "../hooks/useOklchVariants";
 import { VariantCard } from "./VariantCard";
+import bg from "../bg-maple-leaf.png";
 
 interface VariantSectionProps {
   title: string;
@@ -11,16 +12,14 @@ interface VariantSectionProps {
 export function VariantSection({ title, variants, description }: VariantSectionProps): JSX.Element {
   return (
     <div
-      className="space-y-4 rounded-2xl p-6 border"
+      className="space-y-4 rounded-2xl p-6 border-2 border-(--color-border-200) bg-white/80"
       title="Click or press Enter to copy color"
-      style={{
-        backgroundColor: "var(--color-surface)",
-        // subtle thin horizontal lines on top of the surface
-        backgroundImage:
-          "repeating-linear-gradient(180deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 20px)",
+      style={variants[0].type === "A" ? {
+        backgroundImage: `url(${bg.src})`,
         backgroundRepeat: "repeat",
-        backgroundPosition: "0 0",
-        borderColor: "var(--color-border-200)",
+        backgroundSize: "contain",
+      } : {
+        backgroundColor: "var(--color-surface)",
       }}
     >
       <div>

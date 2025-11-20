@@ -7,7 +7,7 @@ import { ThemeController } from "./components/ThemeController";
 import { VariantSection } from "./components/VariantSection";
 
 export default function OklchSeparateVariantsDemo() {
-  const [input, setInput] = useState("oklch(0.6 0.2 260)");
+  const [input, setInput] = useState("oklch(0.56 0.19 266)");
   const [darkMode, setDarkMode] = useState(false);
 
   const { lVariants, cVariants, hVariants, aVariants, isValid } = useOklchVariants(input);

@@ -8,7 +8,7 @@ interface VariantCardProps {
 
 export function VariantCard({ variant }: VariantCardProps): JSX.Element {
   const [copiedColorKey, setCopiedColorKey] = useState("");
-  const isBase = variant.delta === 0;
+  const isBase = variant.delta === (variant.type === "A" ? 1 : 0);
 
   const formatColorWithHighlight = (color: string, type: string) => {
     const match = color.match(/oklch\((.+)\)/);
@@ -74,7 +74,7 @@ export function VariantCard({ variant }: VariantCardProps): JSX.Element {
 
         {/* full color token (click to copy) */}
         <div
-          className={`absolute bottom-3 left-3 bg-white/90 text-black text-[12px] px-2 py-0.5 rounded-md tracking-wider shadow-sm ${
+          className={`absolute bottom-3 left-3 bg-white/90 text-black text-[16px] px-2 py-0.5 rounded-md tracking-wider shadow-sm ${
             isBase ? "italic" : ""
           }`}
         >
