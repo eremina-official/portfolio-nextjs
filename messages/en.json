@@ -39,6 +39,11 @@
           "title": "EWF wrestling roleplaying page",
           "description": "Move wordpress site with EWF wrestling roleplaying page to nextjs",
           "badge": "Case Study"
+        },
+        "4": {
+          "title": "Rare species map",
+          "description": "An immersive product browsing experience with interactive filtering, 3D previews, and accessibility-first design.",
+          "badge": "Case Study"
         }
       }
     }

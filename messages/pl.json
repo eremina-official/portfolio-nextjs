@@ -39,6 +39,11 @@
           "title": "Strona roleplaying EWF Wrestling",
           "description": "Przeniesienie wordpress site z EWF wrestling roleplaying page do nextjs",
           "badge": "Studium przypadku"
+        },
+        "4": {
+          "title": "Mapa zraretnych gatunków",
+          "description": "Mapa zraretnych gatunków",
+          "badge": "Studium przypadku"
         }
       }
     }

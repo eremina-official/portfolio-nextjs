@@ -19,4 +19,10 @@ export const projects: Project[] = [
     tech: ["Next.js", "Supabase", "Tailwind CSS"],
     href: "#",
   },
+  {
+    id: 4,
+    title: "Rare species map",
+    tech: ["Next.js", "MapLibre GL", "Tailwind CSS"],
+    href: "/projects/rare-species-map",
+  },
 ];
