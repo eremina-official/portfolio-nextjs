@@ -4,7 +4,7 @@ import { useState, useEffect, Activity } from "react";
 import Link from "next/link";
 import { LanguageMenu } from "@/components/LanguageMenu";
 import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 type NavLink = {
   href: string;
@@ -21,6 +21,7 @@ const mdBreakpoint = 768; // Tailwind's 'md' breakpoint in pixels
 
 export function NavBar() {
   const pathname = usePathname();
+  const locale = useLocale() || "en";
   const t = useTranslations("nav");
   const [isNavOpen, setIsNavOpen] = useState(false);
   const navClassNames = `
@@ -101,7 +102,7 @@ export function NavBar() {
         <nav className={navClassNames}>
           {navLinks.map((link, index) => {
             const normalizedPath =
-              pathname === "/" ? "/" : pathname.replace(/^\/[^/]+(?=\/|$)/, "");
+              pathname === `/${locale}` ? "/" : pathname.replace(/^\/[^/]+(?=\/|$)/, "");
             const isActive = normalizedPath === link.href;
 
             return (

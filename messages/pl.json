@@ -28,22 +28,22 @@
         "1": {
           "title": "OKLCH Color Explorer",
           "description": "Eksploruj, jak zmiany Jasności, Chromy, Odcienia i Przezroczystości wpływają na kolory OKLCH. Kliknij dowolny kolor, aby skopiować jego wartość.",
-          "badge": "Studium przypadku"
+          "badge": "Projekt"
         },
         "2": {
-          "title": "Galeria produktowa e-commerce",
-          "description": "Immersyjne przeglądanie produktów z interaktywnymi filtrami, podglądem 3D i naciskiem na dostępność.",
-          "badge": "Studium przypadku"
+          "title": "Mapa pokazująca rozmieszczenie gatunków",
+          "description": "Mapa pokazująca rozmieszczenie gatunków",
+          "badge": "Projekt"
         },
         "3": {
           "title": "Strona roleplaying EWF Wrestling",
           "description": "Przeniesienie wordpress site z EWF wrestling roleplaying page do nextjs",
-          "badge": "Studium przypadku"
+          "badge": "Projekt"
         },
         "4": {
-          "title": "Mapa zraretnych gatunków",
-          "description": "Mapa zraretnych gatunków",
-          "badge": "Studium przypadku"
+          "title": "Mapa rzadkich gatunków",
+          "description": "Mapa rzadkich gatunków",
+          "badge": "Projekt"
         }
       }
     }

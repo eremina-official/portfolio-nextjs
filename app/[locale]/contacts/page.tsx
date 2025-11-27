@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import ContactCard from "./ContactCard";
+import { Container } from "@/components/Container";
 
 interface ContactCardData {
   id: string;
@@ -41,8 +42,8 @@ export default function ContactsPage() {
   ];
 
   return (
-    <main className="px-4 py-8">
-      <div className="flex flex-col gap-10">
+    <main>
+      <Container className="flex flex-col gap-10 py-8">
         <header className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             {t("badge")}
@@ -67,7 +68,7 @@ export default function ContactsPage() {
         <section className="rounded-2xl border border-dashed border-zinc-200 bg-white p-6 text-sm text-zinc-600">
           <p>{t("outro")}</p>
         </section>
-      </div>
+      </Container>
     </main>
   );
 }

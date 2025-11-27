@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { Container } from "@/components/Container";
 
 const skills = [
   {
@@ -39,7 +40,7 @@ export default function SkillsPage() {
   const t = useTranslations("skills");
 
   return (
-    <div className="flex flex-col gap-10">
+    <Container className="flex flex-col gap-10 py-8">
       <header className="space-y-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">{t("badge")}</p>
         <h1 className="text-3xl font-semibold text-text sm:text-4xl">{t("title")}</h1>
@@ -70,6 +71,6 @@ export default function SkillsPage() {
       <section className="rounded-2xl border border-dashed border-primary-light bg-indigo-50/50 p-6 text-sm text-primary">
         <p>{t("outro")}</p>
       </section>
-    </div>
+    </Container>
   );
 }

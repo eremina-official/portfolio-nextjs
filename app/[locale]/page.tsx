@@ -3,12 +3,13 @@ import { Card } from "@/components/Card";
 import { projects } from "@/data/projects";
 import { useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
+import { Container } from "@/components/Container";
 
 export default function Home() {
   const t = useTranslations("home");
 
   return (
-    <div className="flex flex-col gap-16">
+    <Container className="flex flex-col gap-16 py-12">
       <section className="flex flex-col gap-6">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">{t("badge")}</p>
 
@@ -68,6 +69,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </div>
+    </Container>
   );
 }
