@@ -35,6 +35,7 @@ export default function MapClient() {
   useEffect(() => {
     (async () => {
       const maplibregl = (await import("maplibre-gl")).default;
+      // @ts-expect-error - import CSS as a side-effect; no type declarations for this CSS file
       await import("maplibre-gl/dist/maplibre-gl.css");
 
       if (!mapRef.current) return;
