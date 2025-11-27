@@ -31,7 +31,7 @@ export function Card({ project }: CardProps) {
           </ul>
         ) : null}
         <div className="mt-6 inline-flex items-center text-sm font-medium text-primary transition group-hover:text-primary-dark">
-          {t(href !== '#' ? `ctaLabel` : `comingSoon`)}
+          {t(href !== "#" ? `ctaLabel` : `comingSoon`)}
           <span aria-hidden className="ml-1 transition group-hover:translate-x-1">
             →
           </span>

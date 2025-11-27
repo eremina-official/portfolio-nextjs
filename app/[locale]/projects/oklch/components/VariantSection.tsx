@@ -14,13 +14,17 @@ export function VariantSection({ title, variants, description }: VariantSectionP
     <div
       className="space-y-4 rounded-2xl p-6 border-2 border-(--color-border-200) bg-white/80"
       title="Click or press Enter to copy color"
-      style={variants[0].type === "A" ? {
-        backgroundImage: `url(${bg.src})`,
-        backgroundRepeat: "repeat",
-        backgroundSize: "contain",
-      } : {
-        backgroundColor: "var(--color-surface)",
-      }}
+      style={
+        variants[0].type === "A"
+          ? {
+              backgroundImage: `url(${bg.src})`,
+              backgroundRepeat: "repeat",
+              backgroundSize: "contain",
+            }
+          : {
+              backgroundColor: "var(--color-surface)",
+            }
+      }
     >
       <div>
         <h2 className="text-lg font-semibold text-gray-900 mb-1">{title}</h2>

@@ -29,10 +29,7 @@ export function VariantCard({ variant }: VariantCardProps): JSX.Element {
         {parts.map((part, i) => {
           const isTarget = i === targetIndex;
           return (
-            <span
-              key={i}
-              className={isTarget ? "font-bold text-red-500 rounded px-0.5" : ""}
-            >
+            <span key={i} className={isTarget ? "font-bold text-red-500 rounded px-0.5" : ""}>
               {part}
               {i < parts.length - 1 ? " " : ""}
             </span>
