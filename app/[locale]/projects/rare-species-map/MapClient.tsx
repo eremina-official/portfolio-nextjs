@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import maplibregl from "maplibre-gl";
-import "maplibre-gl/dist/maplibre-gl.css";
 import YearRangeButton from "./YearRangeButton";
 import TextPanel from "./TextPanel";
 
@@ -35,35 +33,40 @@ export default function MapClient() {
   const [selectedRange, setSelectedRange] = useState(yearsRange1);
 
   useEffect(() => {
-    if (!mapRef.current) return;
+    (async () => {
+      const maplibregl = (await import("maplibre-gl")).default;
+      await import("maplibre-gl/dist/maplibre-gl.css");
 
-    // Initialize MapLibre
-    const map = new maplibregl.Map({
-      container: mapRef.current,
-      style: "https://tiles.basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
-      center: [10, 50],
-      zoom: 3,
-    });
+      if (!mapRef.current) return;
 
-    mapInstanceRef.current = map;
-
-    map.on("load", () => {
-      // Add GBIF raster tile layer
-      map.addSource("gbif-tiles", {
-        type: "raster",
-        tiles: [buildUrl(selectedRange)],
-        tileSize: 256,
+      // Initialize MapLibre
+      const map = new maplibregl.Map({
+        container: mapRef.current,
+        style: "https://tiles.basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+        center: [10, 50],
+        zoom: 3,
       });
 
-      map.addLayer({
-        id: "gbif-layer",
-        type: "raster",
-        source: "gbif-tiles",
-        paint: {
-          "raster-opacity": 0.85,
-        },
+      mapInstanceRef.current = map;
+
+      map.on("load", () => {
+        // Add GBIF raster tile layer
+        map.addSource("gbif-tiles", {
+          type: "raster",
+          tiles: [buildUrl(yearsRange1)],
+          tileSize: 256,
+        });
+
+        map.addLayer({
+          id: "gbif-layer",
+          type: "raster",
+          source: "gbif-tiles",
+          paint: {
+            "raster-opacity": 0.85,
+          },
+        });
       });
-    });
+    })();
 
     return () => {
       if (mapRef.current) {
@@ -76,7 +79,8 @@ export default function MapClient() {
   // Update map layer when selected range changes
   useEffect(() => {
     const map = mapInstanceRef.current;
-    if (!map || !map.isStyleLoaded()) return;
+
+    if (!map) return;
 
     // Check if source exists
     if (map.getSource("gbif-tiles")) {
@@ -110,13 +114,16 @@ export default function MapClient() {
     const map = mapInstanceRef.current;
     if (!map) return;
 
-    // Wait until the map is idle (all tiles rendered)
-    await new Promise<void>((resolve) => map.once("idle", () => resolve()));
+    // Workaround to ensure webgl canvas is fully rendered
+    map.repaint = true;
+    // wait a tick to ensure repaint
+    await new Promise<void>((resolve) => {
+      requestAnimationFrame(() => resolve());
+    });
 
     const mapCanvas = map.getCanvas();
     const w = mapCanvas.width;
     const h = mapCanvas.height;
-
     // create merged canvas
     const merged = document.createElement("canvas");
     merged.width = w;
@@ -142,18 +149,18 @@ export default function MapClient() {
     link.download = "map-with-label.png";
     document.body.appendChild(link);
     link.click();
-    link.remove();  
+    link.remove();
+    map.repaint = false;
   };
 
-
   return (
-    <div className="w-full h-full overflow-hidden flex flex-col">
-      <button onClick={downloadMap} className="px-4 py-2 bg-emerald-500 text-white rounded">
-      Download Map
-    </button>
+    <div className="w-full h-full mx-auto overflow-hidden flex flex-col">
+      <div className="px-4 py-2 text-center bg-emerald-500 text-white rounded">
+        Biodiversity Map Project
+      </div>
 
       {/* Pure Dark Header */}
-      <div className="w-full backdrop-blur-xl bg-gray-950/95 border-b-2 border-gray-800/50 ">
+      <div className="w-full bg-gray-950/95 border-b-2 border-gray-800/50 ">
         <div className="px-8 py-6 flex flex-wrap gap-4 justify-between items-center">
           {/* Title and Species Info */}
           <div className="max-w-7xl">
@@ -190,7 +197,7 @@ export default function MapClient() {
           </div>
           <button onClick={downloadMap} className="px-4 py-2 bg-emerald-500 text-white rounded">
             Download Map
-          </button> 
+          </button>
         </div>
       </div>
 
@@ -199,7 +206,7 @@ export default function MapClient() {
         {/* Map Section */}
         <div className="relative flex-1">
           {/* Floating Year Range Control Panel */}
-          <div className="absolute top-8 left-8 z-10 backdrop-blur-xl bg-gray-900/95 rounded-2xl border-2 border-gray-800/50 overflow-hidden">
+          <div className="absolute top-8 left-2 z-10 bg-gray-900/95 rounded-2xl border-2 border-gray-800/50 w-max max-w-[90vw]">
             <div className="px-5 py-4">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
@@ -224,8 +231,8 @@ export default function MapClient() {
           <div ref={mapRef} className="w-full h-[780px]" />
         </div>
 
-          {/* Explanatory Text Panel */}
-          <TextPanel />
+        {/* Explanatory Text Panel */}
+        <TextPanel />
       </div>
     </div>
   );
