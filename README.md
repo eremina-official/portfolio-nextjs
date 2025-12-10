@@ -45,4 +45,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 TODO
 - Light / dark / custom theme support via CSS variables
 - Use Motion to animate side menu on mobile
-- Analyze ai-generated code in the oklch project, remove redundant code
+- Analyze ai-generated code in the projects, remove redundant code
+- Add ErrorBoundary
+- Add tests

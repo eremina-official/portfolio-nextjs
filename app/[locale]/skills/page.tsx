@@ -2,8 +2,18 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/Container";
 
 const skills = [
+    {
+    title: "Data & BI",
+    items: [
+      "SQL (PostgreSQL)",
+      "Python (Pandas, NumPy)",
+      "PowerBI & Tableau",
+      "Data Visualization",
+      "dbt (Data Build Tool)",
+    ],
+  },
   {
-    title: "Core Frontend",
+    title: "Frontend Development",
     items: [
       "HTML5 & Semantic Markup",
       "CSS3 & Tailwind CSS",
@@ -47,7 +57,7 @@ export default function SkillsPage() {
         <p className="max-w-2xl text-base text-subtext">{t("description")}</p>
       </header>
 
-      <section className="grid gap-6 md:grid-cols-3">
+      <section className="grid gap-6 md:grid-cols-4">
         {skills.map((category) => (
           <article
             key={category.title}

@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <Container className="flex flex-col gap-16 py-12">
-      <section className="flex flex-col gap-6">
+      <section className="max-w-4xl flex flex-col gap-6">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">{t("badge")}</p>
 
         <motion.h1
@@ -27,12 +27,12 @@ export default function Home() {
             WebkitBackgroundClip: "text",
             color: "transparent",
           }}
-          className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl"
+          className="text-3xl font-semibold tracking-tight sm:text-5xl md:text-6xl"
         >
           {t("title")}
         </motion.h1>
 
-        <p className="max-w-2xl text-lg text-zinc-600">{t("description")}</p>
+        <p className="text-lg text-zinc-600">{t("description")}</p>
 
         <div className="flex flex-wrap gap-4">
           <Link

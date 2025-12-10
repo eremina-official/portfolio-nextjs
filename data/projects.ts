@@ -21,7 +21,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Rare species map",
+    title: "Gray wolf distribution map",
     tech: ["Next.js", "MapLibre GL", "Tailwind CSS"],
     href: "/projects/rare-species-map",
   },

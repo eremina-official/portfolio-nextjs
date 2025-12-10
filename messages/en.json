@@ -13,9 +13,9 @@
     "Polish": "Polish"
   },
   "home": {
-    "badge": "Frontend Developer",
-    "title": "Crafting thoughtful, performant interfaces that turn ideas into intuitive user experiences.",
-    "description": "I design and build modern web applications with a focus on clean design, accessible interactions, and maintainable code. Explore the selected projects below or reach out if you’d like to collaborate.",
+    "badge": "Frontend & Data/BI Developer",
+    "title": "Crafting thoughtful interfaces and turning data into actionable insights.",
+    "description": "I design and build modern web applications and data solutions. With a focus on clean code, user experience, and business intelligence, I help bridge the gap between data and design.",
     "primaryCta": "Let’s work together",
     "secondaryCta": "View skills",
     "projectsSection": {
@@ -41,8 +41,8 @@
           "badge": "Projekt"
         },
         "4": {
-          "title": "Rare species map",
-          "description": "An immersive product browsing experience with interactive filtering, 3D previews, and accessibility-first design.",
+          "title": "Gray wolf distribution map",
+          "description": "Interactive map visualizing gray wolf occurrences over time with year-based filtering.",
           "badge": "Projekt"
         }
       }
@@ -50,8 +50,8 @@
   },
   "skills": {
     "badge": "Skills",
-    "title": "A toolkit for building delightful web experiences.",
-    "description": "From translating designs into production-ready interfaces to optimizing performance and accessibility, these are the skills I lean on to ship quality work.",
+    "title": "A toolkit for building delightful web experiences and data-driven solutions.",
+    "description": "From translating designs into production-ready interfaces to analyzing complex datasets, these are the skills I lean on to ship quality work.",
     "categories": [
       {
         "title": "Core Frontend",

@@ -13,9 +13,9 @@
     "Polish": "Polski"
   },
   "home": {
-    "badge": "Frontend Developer",
-    "title": "Tworzę przemyślane, wydajne interfejsy, które zmieniają pomysły w intuicyjne doświadczenia użytkowników.",
-    "description": "Projektuję i buduję nowoczesne aplikacje internetowe, stawiając na przejrzysty design, dostępność oraz łatwą pielęgnację kodu. Zobacz wybrane projekty lub odezwij się, jeśli chcesz nawiązać współpracę.",
+    "badge": "Frontend & Data/BI Developer",
+    "title": "Tworzę przemyślane interfejsy i zamieniam dane w użyteczne wnioski.",
+    "description": "Projektuję i buduję nowoczesne aplikacje internetowe oraz rozwiązania oparte na danych. Skupiam się na czystym kodzie, doświadczeniach użytkownika i Business Intelligence.",
     "primaryCta": "Współpracujmy",
     "secondaryCta": "Zobacz umiejętności",
     "projectsSection": {
@@ -41,8 +41,8 @@
           "badge": "Projekt"
         },
         "4": {
-          "title": "Mapa rzadkich gatunków",
-          "description": "Mapa rzadkich gatunków",
+          "title": "Mapa rozmieszczenia wilka szarego",
+          "description": "Interaktywna mapa prezentująca występowanie wilka szarego w czasie z filtrowaniem po roku.",
           "badge": "Projekt"
         }
       }
@@ -50,8 +50,8 @@
   },
   "skills": {
     "badge": "Umiejętności",
-    "title": "Zestaw narzędzi do tworzenia angażujących doświadczeń w sieci.",
-    "description": "Od przekładania projektów na gotowe interfejsy po optymalizację wydajności i dostępności — to umiejętności, na których polegam, aby dostarczać dopracowane produkty.",
+    "title": "Zestaw narzędzi do tworzenia świetnych doświadczeń w sieci i rozwiązań opartych na danych.",
+    "description": "Od przekładania projektów na gotowe interfejsy po analizę złożonych zbiorów danych — to umiejętności, na których polegam.",
     "categories": [
       {
         "title": "Frontend w praktyce",
