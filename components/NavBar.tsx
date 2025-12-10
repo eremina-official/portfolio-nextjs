@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Activity } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LanguageMenu } from "@/components/LanguageMenu";
 import { usePathname } from "next/navigation";
@@ -24,14 +24,7 @@ export function NavBar() {
   const locale = useLocale() || "en";
   const t = useTranslations("nav");
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const navClassNames = `
-  flex flex-col md:flex-row
-  md:static md:translate-x-0 md:bg-transparent md:shadow-none
-  absolute top-10 right-[-25] w-[50vw] bg-surface shadow-lg rounded-2xl md:rounded-none
-  transform transition-transform duration-300 ease-in-out
-  ${isNavOpen ? "translate-x-0" : "translate-x-full"}
-  md:items-center md:h-auto md:w-auto md:p-0 overflow-hidden
-`;
+  const normalizedPath = pathname === `/${locale}` ? "/" : pathname.replace(/^\/[^/]+(?=\/|$)/, "");
 
   const toggleNav = () => {
     setIsNavOpen((prev) => !prev);
@@ -55,10 +48,12 @@ export function NavBar() {
   }, []);
 
   useEffect(() => {
-    // Only run on client
     const md = window.matchMedia(`(min-width: ${mdBreakpoint}px)`);
-    setIsNavOpen(md.matches);
-  }, [pathname]);
+    const handle = () => setIsNavOpen(md.matches);
+    handle();
+    md.addEventListener("change", handle);
+    return () => md.removeEventListener("change", handle);
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -73,7 +68,7 @@ export function NavBar() {
       {/* mobile menu button */}
       <button
         type="button"
-        className="inline-flex items-center justify-center rounded-full border border-zinc-300 p-2 text-sm text-zinc-700 transition hover:border-primary-light hover:text-primary md:hidden cursor-pointer"
+        className="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-white p-2 text-sm text-zinc-700 shadow-sm transition hover:border-primary-light hover:text-primary md:hidden"
         aria-label="Toggle navigation"
         aria-expanded={isNavOpen}
         aria-controls="mobile-menu"
@@ -99,21 +94,31 @@ export function NavBar() {
       </button>
 
       <div className="relative flex items-center gap-4">
-        <nav className={navClassNames}>
+        <nav
+          className={`flex flex-col md:flex-row md:static md:translate-x-0 md:bg-transparent md:shadow-none absolute top-12 right-[-25] w-[70vw] max-w-xs rounded-2xl border border-zinc-200 bg-white/95 p-4 shadow-xl ring-1 ring-black/5 transition-transform duration-300 ease-in-out ${
+            isNavOpen ? "translate-x-0" : "translate-x-full"
+          } md:border-0 md:bg-transparent md:p-0 md:shadow-none md:ring-0 md:w-auto md:max-w-none md:transform-none md:items-center md:h-auto`}
+        >
           {navLinks.map((link, index) => {
-            const normalizedPath =
-              pathname === `/${locale}` ? "/" : pathname.replace(/^\/[^/]+(?=\/|$)/, "");
             const isActive = normalizedPath === link.href;
 
             return (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`transition-colors p-10 md:p-3 font-semibold ${index !== navLinks.length - 1 ? "border-b" : ""} md:border-none md:rounded-xl border-zinc-300 whitespace-nowrap cursor-pointer active:bg-zinc-100 ${
-                  isActive ? "bg-zinc-300" : ""
-                }`}
+                className={`relative px-4 py-3 md:px-3 md:py-2 font-semibold whitespace-nowrap cursor-pointer transition-colors duration-200 ${
+                  index !== navLinks.length - 1 ? "border-b md:border-0 border-zinc-200" : ""
+                } ${isActive ? "text-primary" : "text-zinc-700 hover:text-primary"}`}
+                onClick={() => !isNavOpen || setIsNavOpen(false)}
               >
                 {t(link.label)}
+                <span
+                  className={`pointer-events-none absolute left-4 right-4 bottom-2 md:-bottom-1 h-0.5 rounded-full bg-gradient-to-r from-primary/70 to-accent/70 transition-all duration-200 md:left-0 md:right-0 ${
+                    isActive
+                      ? "scale-x-100 opacity-100"
+                      : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
+                  }`}
+                />
               </Link>
             );
           })}

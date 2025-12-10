@@ -37,13 +37,13 @@ export default function Home() {
         <div className="flex flex-wrap gap-4">
           <Link
             href="/contacts"
-            className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-white transition hover:bg-primary"
+            className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             {t("primaryCta")}
           </Link>
           <Link
             href="/skills"
-            className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-800 transition hover:border-indigo-200 hover:text-primary"
+            className="rounded-full border border-zinc-200 px-6 py-3 text-sm font-medium text-zinc-800 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-primary hover:text-primary hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             {t("secondaryCta")}
           </Link>
