@@ -10,7 +10,8 @@
   "languageMenu": {
     "label": "Język",
     "English": "Angielski",
-    "Polish": "Polski"
+    "Polish": "Polski",
+    "selectLanguage": "Wybierz język"
   },
   "home": {
     "badge": "Frontend & Data/BI Developer",
