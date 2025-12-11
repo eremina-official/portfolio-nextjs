@@ -48,3 +48,4 @@ TODO
 - Analyze ai-generated code in the projects, remove redundant code
 - Add ErrorBoundary
 - Add tests
+- Add github icon as link to project cards
