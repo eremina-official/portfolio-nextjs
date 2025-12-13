@@ -64,7 +64,7 @@ export function NavBar() {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-between">
+    <div className="relative flex items-center justify-between order-2 md:order-1">
       {/* mobile menu button */}
       <button
         type="button"

@@ -64,7 +64,7 @@ export function LanguageMenu() {
           group flex items-center gap-2 rounded-full border border-white/20 
           bg-white/80 px-3 py-2 text-sm font-medium text-text shadow-sm 
           transition-all duration-200 
-          hover:border-primary/30 hover:bg-white/80 hover:shadow-md
+          hover:border-primary/30 hover:bg-white/80 hover:shadow-md cursor-pointer
         `}
         aria-haspopup="true"
         aria-expanded={isOpen}
