@@ -3,4 +3,5 @@ export interface Project {
   title: string;
   tech: string[];
   href: string;
+  github: string;
 }

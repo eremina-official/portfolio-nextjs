@@ -8,15 +8,21 @@ type CardProps = {
 
 export function Card({ project }: CardProps) {
   const t = useTranslations("home.projectsSection");
-  const { id, href, tech } = project;
+  const { id, href, tech, github } = project;
   const currentProject = `projects.${id}`;
 
   return (
-    <Link href={href} className="block">
-      <article
+    <article
         key={id}
-        className="group flex h-full flex-col rounded-2xl border border-border-200 bg-white/90 px-6 py-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+        className="relative group flex h-full flex-col rounded-2xl border border-border-200 bg-white/90 px-6 py-7 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
       >
+        {/* Card link overlay */}
+        <Link
+          href={href}
+          className="absolute inset-0 z-10"
+          aria-label="Open project details"
+        />
+
         <div className="flex items-center justify-between">
           {/* <h3 className="text-lg font-semibold text-text transition duration-800 group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent group-hover:bg-clip-text group-hover:text-transparent"> */}
           <h3
@@ -29,28 +35,50 @@ export function Card({ project }: CardProps) {
             {t(`${currentProject}.title`)}
           </h3>
         </div>
+
         <p className="mt-3 flex-1 text-sm text-subtext leading-relaxed">
           {t(`${currentProject}.description`)}
         </p>
+
         {tech.length ? (
           <ul className="mt-4 flex flex-wrap gap-2 text-sm text-zinc-500">
             {tech.map((item) => (
-              <li key={item} className="rounded-full bg-indigo-50 px-5 py-2 text-accent">
+              <li key={item} className="rounded-full px-4 py-1 text-xs font-medium
+             bg-primary/10 backdrop-blur-sm
+             border border-primary/20
+             text-accent/80">
                 {item}
               </li>
             ))}
           </ul>
         ) : null}
-        <div className="mt-6 inline-flex items-center text-sm font-medium text-primary transition group-hover:text-primary-dark">
-          {t(href !== "#" ? `ctaLabel` : `comingSoon`)}
-          <span
-            aria-hidden
-            className="ml-1 inline-block transition-transform duration-200 group-hover:translate-x-1"
+
+        <div className="mt-6 flex items-center justify-between border-t border-border-200 pt-4 text-sm">
+          {/* Primary action */}
+          <div className="flex items-center gap-1 font-medium text-primary transition-colors group-hover:text-primary-dark">
+            {t(href !== "#" ? "ctaLabel" : "comingSoon")}
+            <span
+              aria-hidden
+              className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </div>
+
+          {/* Secondary action */}
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-20 inline-flex items-center gap-1 rounded-lg px-3 py-1.5
+                      text-subtext transition
+                      hover:bg-zinc-100 hover:text-text
+                      focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           >
-            →
-          </span>
+            GitHub
+            <span aria-hidden className="text-xs">↗</span>
+          </a>
         </div>
       </article>
-    </Link>
   );
 }

@@ -49,3 +49,4 @@ TODO
 - Add ErrorBoundary
 - Add tests
 - Add github icon as link to project cards
+- Add readme files for projects
