@@ -84,7 +84,7 @@ export function LanguageMenu() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.95 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute right-0 mt-2 w-48 origin-top-right overflow-hidden rounded-2xl border border-white/20 bg-white/80 p-1 shadow-xl backdrop-blur-xl ring-1 ring-black/5"
+            className="absolute right-0 mt-2 w-48 origin-top-right overflow-hidden rounded-2xl border border-white/20 bg-white/95 p-1 shadow-xl backdrop-blur-xs ring-1 ring-black/5"
           >
             {currentLanguage?.label && (
               <div className="px-3 py-2">

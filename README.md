@@ -1,8 +1,8 @@
-# Portfolio — Frontend
+# Portfolio
 
 Demo: [https://portfolio-marinaeremina.vercel.app/](https://portfolio-marinaeremina.vercel.app/).
 
-This repository is a frontend portfolio built with Next.js (App Router). It demonstrates a responsive, accessible, and themeable personal site for showcasing projects, writing, and contact details.
+This repository is a portfolio built with Next.js (App Router). It demonstrates a responsive, accessible, and themeable personal site for showcasing projects, writing and contact details.
 
 ## Tech stack
 
@@ -47,6 +47,7 @@ TODO
 - Use Motion to animate side menu on mobile
 - Analyze ai-generated code in the projects, remove redundant code
 - Add ErrorBoundary
-- Add tests
-- Add github icon as link to project cards
+- Add tests (test for most important translations, tests for error boundaries)
+- Add github icon as link to project cards - done
 - Add readme files for projects
+- Add projects to menu
