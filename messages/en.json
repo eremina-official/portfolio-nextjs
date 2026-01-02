@@ -1,6 +1,7 @@
 {
   "nav": {
     "Home": "Home",
+    "Projects": "Projects",
     "Skills": "Skills",
     "Contacts": "Contacts"
   },
@@ -15,7 +16,7 @@
   },
   "home": {
     "badge": "Frontend & Data/BI Developer",
-    "title": "Crafting thoughtful interfaces and turning data into actionable insights.",
+    "title": "Crafting thoughtful interfaces and turning data into actionable insights",
     "description": "I design and build modern web applications and data solutions. With a focus on clean code, user experience, and business intelligence, I help bridge the gap between data and design.",
     "primaryCta": "Let’s work together",
     "secondaryCta": "View skills",
@@ -51,7 +52,7 @@
   },
   "skills": {
     "badge": "Skills",
-    "title": "A toolkit for building delightful web experiences and data-driven solutions.",
+    "title": "A toolkit for building delightful web experiences and data-driven solutions",
     "description": "From translating designs into production-ready interfaces to analyzing complex datasets, these are the skills I lean on to ship quality work.",
     "categories": [
       {
@@ -86,7 +87,7 @@
   },
   "contacts": {
     "badge": "Contact",
-    "title": "Let’s create something together.",
+    "title": "Let’s create something together",
     "description": "Whether you have a product idea, a design ready to be implemented, or you simply want to say hello, feel free to reach out through any of the channels below.",
     "cards": [
       {
@@ -109,6 +110,11 @@
   },
   "footer": {
     "text": "© {{year}} Frontend Portfolio. All rights reserved."
+  },
+  "projectsPage": {
+    "badge": "Projects",
+    "title": "A selection of my work",
+    "description": "Here you can find a collection of my projects, ranging from web applications to data analysis and visualizations."
   }
 }
 

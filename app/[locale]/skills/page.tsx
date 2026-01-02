@@ -53,7 +53,7 @@ export default function SkillsPage() {
     <Container className="flex flex-col gap-10 py-8">
       <header className="space-y-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">{t("badge")}</p>
-        <h1 className="text-3xl font-semibold text-text sm:text-4xl">{t("title")}</h1>
+        <h1 className="font-semibold text-text">{t("title")}</h1>
         <p className="max-w-2xl text-base text-subtext">{t("description")}</p>
       </header>
 

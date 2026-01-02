@@ -57,7 +57,7 @@ export default function Home() {
             <p className="text-sm text-zinc-500">{t("projectsSection.subtitle")}</p>
           </div>
           <Link
-            href="#"
+            href="/projects"
             className="hidden text-sm font-medium text-primary hover:text-primary-dark sm:inline-block"
           >
             {t("projectsSection.viewAll")}

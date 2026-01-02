@@ -47,6 +47,18 @@ body {
   overflow-x: hidden;
 }
 
-h2 {
-  @apply text-xl;
+@layer base {
+  h1 {
+    font-size: var(--text-3xl);
+  }
+  h2 {
+    font-size: var(--text-xl);
+  }
+
+  @media screen and (min-width: 795px) {
+    h1 {
+      font-size: var(--text-4xl);
+    }
+  }
+
 }

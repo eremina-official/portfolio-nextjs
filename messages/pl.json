@@ -1,6 +1,7 @@
 {
   "nav": {
     "Home": "Strona główna",
+    "Projects": "Projekty",
     "Skills": "Umiejętności",
     "Contacts": "Kontakt"
   },
@@ -15,7 +16,7 @@
   },
   "home": {
     "badge": "Frontend & Data/BI Developer",
-    "title": "Tworzę przemyślane interfejsy i zamieniam dane w użyteczne wnioski.",
+    "title": "Tworzę przemyślane interfejsy i zamieniam dane w użyteczne wnioski",
     "description": "Projektuję i buduję nowoczesne aplikacje internetowe oraz rozwiązania oparte na danych. Skupiam się na czystym kodzie, doświadczeniach użytkownika i Business Intelligence.",
     "primaryCta": "Współpracujmy",
     "secondaryCta": "Zobacz umiejętności",
@@ -51,7 +52,7 @@
   },
   "skills": {
     "badge": "Umiejętności",
-    "title": "Zestaw narzędzi do tworzenia świetnych doświadczeń w sieci i rozwiązań opartych na danych.",
+    "title": "Zestaw narzędzi do tworzenia świetnych doświadczeń w sieci i rozwiązań opartych na danych",
     "description": "Od przekładania projektów na gotowe interfejsy po analizę złożonych zbiorów danych — to umiejętności, na których polegam.",
     "categories": [
       {
@@ -86,7 +87,7 @@
   },
   "contacts": {
     "badge": "Kontakt",
-    "title": "Stwórzmy coś razem.",
+    "title": "Stwórzmy coś razem",
     "description": "Masz pomysł na produkt, gotowy projekt do wdrożenia, a może chcesz po prostu przywitać się? Wybierz kanał, który najbardziej Ci odpowiada.",
     "cards": [
       {
@@ -109,6 +110,11 @@
   },
   "footer": {
     "text": "© {{year}} Frontend Portfolio. Wszelkie prawa zastrzeżone."
+  },
+  "projectsPage": {
+    "badge": "Projekty",
+    "title": "Wybór moich prac",
+    "description": "Tutaj znajdziesz zbiór moich projektów, od aplikacji internetowych po analizę i wizualizacje danych."
   }
 }
 
