@@ -63,7 +63,7 @@ export default function OklchSeparateVariantsDemo() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="oklch(0.6 0.2 260)"
-                className={`w-full p-4 rounded-xl border-2 transition-colors duration-200 font-mono text-lg ${
+                className={`w-full p-4 rounded-xl border-2 transition-colors duration-200 font-mono text-text text-lg ${
                   isValid
                     ? "border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
                     : "border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-200"

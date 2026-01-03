@@ -94,7 +94,7 @@ export function NavBar() {
         </div>
       </button>
 
-      <div className="relative flex items-center gap-4">
+      <div className="relative flex items-center gap-6">
         <nav
           className={`flex flex-col md:flex-row md:static md:translate-x-0 md:bg-transparent md:shadow-none absolute top-12 right-[-25] w-[70vw] max-w-xs rounded-2xl border border-zinc-200 bg-white/95 p-4 shadow-xl ring-1 ring-black/5 transition-transform duration-300 ease-in-out ${
             isNavOpen ? "translate-x-0" : "translate-x-full"
@@ -111,14 +111,14 @@ export function NavBar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`relative px-4 py-3 md:px-3 md:py-2 font-semibold whitespace-nowrap cursor-pointer transition-colors duration-200 ${
+                className={`relative px-4 py-5 md:px-3 md:py-2 font-semibold whitespace-nowrap cursor-pointer transition-colors duration-200 ${
                   index !== navLinks.length - 1 ? "border-b md:border-0 border-zinc-200" : ""
                 } ${isActive ? "text-primary" : "text-zinc-700 hover:text-primary"}`}
                 onClick={() => !isNavOpen || setIsNavOpen(false)}
               >
                 {t(link.label)}
                 <span
-                  className={`pointer-events-none absolute left-4 right-4 bottom-2 md:-bottom-1 h-0.5 rounded-full bg-gradient-to-r from-primary/70 to-accent/70 transition-all duration-200 md:left-0 md:right-0 ${
+                  className={`pointer-events-none absolute left-4 right-4 bottom-4 md:-bottom-1 h-0.5 rounded-full bg-gradient-to-r from-primary/70 to-accent/70 transition-all duration-200 md:left-0 md:right-0 ${
                     isActive
                       ? "scale-x-100 opacity-100"
                       : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"

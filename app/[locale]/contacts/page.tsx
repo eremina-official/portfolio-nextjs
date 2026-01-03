@@ -49,7 +49,7 @@ export default function ContactsPage() {
             {t("badge")}
           </p>
           <h1 className="text-3xl font-semibold text-text sm:text-4xl">{t("title")}</h1>
-          <p className="max-w-2xl text-base text-">{t("description")}</p>
+          <p className="max-w-2xl text-base text-subtext">{t("description")}</p>
         </header>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

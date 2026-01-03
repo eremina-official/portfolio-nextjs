@@ -48,7 +48,7 @@ export function VariantCard({ variant }: VariantCardProps): JSX.Element {
 
   return (
     <div
-      className={`flex-[0_1_30%] group transition-all duration-200 hover:scale-105 hover:shadow-lg`}
+      className={`flex-[1_1_30%] group min-w-[180px] transition-all duration-200 hover:scale-105 hover:shadow-lg`}
     >
       <div
         className={`h-34 rounded-lg shadow-md flex items-end justify-center p-3 relative overflow-hidden ${
@@ -71,7 +71,7 @@ export function VariantCard({ variant }: VariantCardProps): JSX.Element {
 
         {/* full color token (click to copy) */}
         <div
-          className={`absolute bottom-3 left-3 bg-white/90 text-black text-[16px] px-2 py-0.5 rounded-md tracking-wider shadow-sm ${
+          className={`absolute bottom-3 left-3 bg-white/90 text-black text-[12px] px-2 py-0.5 rounded-md tracking-wider shadow-sm ${
             isBase ? "italic" : ""
           }`}
         >

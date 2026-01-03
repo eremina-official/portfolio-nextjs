@@ -8,13 +8,13 @@ export function Header() {
 
   return (
     <header className="border-b border-zinc-200 shadow-sm backdrop-blur-sm z-10">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 py-5">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-6 py-5">
         <div className="flex items-center gap-3">
           <Link href="/" className="text-lg font-semibold tracking-tight text-zinc-900">
             {t("title")}
           </Link>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           <NavBar />
           <Link
             href="https://github.com/eremina-official/portfolio-nextjs"
