@@ -21,10 +21,10 @@ This repository is a portfolio built with Next.js (App Router). It demonstrates 
 ## Features
 
 - Responsive layout and components
-- Light / dark / custom theme support via CSS variables
-- Tailwind utility-first styling with @apply where appropriate
+- Tailwind utility-first styling
 - SEO-friendly pages (meta tags, canonical URLs)
 - Language change via next-intl
+- Animated components with Framer Motion
 
 ## Getting started
 
@@ -45,9 +45,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 TODO
 - Light / dark / custom theme support via CSS variables
 - Use Motion to animate side menu on mobile
-- Analyze ai-generated code in the projects, remove redundant code
-- Add ErrorBoundary
 - Add tests (test for most important translations, tests for error boundaries)
-- Add github icon as link to project cards - done
 - Add readme files for projects
-- Add projects to menu
+- Analyze ai-generated code in the projects, remove redundant code
+- Handle loading states
+
+- Add github icon as link to project cards - done
+- Add projects to menu - done
+- Add error.tsx to handle routing/server errors - done
+- Add custom ErrorBoundary to handle component errors - done
+
