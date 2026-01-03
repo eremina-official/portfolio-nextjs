@@ -23,31 +23,7 @@
     "projectsSection": {
       "title": "Featured projects",
       "subtitle": "Highlights from recent work and explorations.",
-      "viewAll": "View all",
-      "ctaLabel": "View project",
-      "comingSoon": "Coming soon",
-      "projects": {
-        "1": {
-          "title": "OKLCH Color Explorer",
-          "description": "Explore how Lightness, Chroma, Hue and Alpha variations affect your OKLCH colors. Click any color to copy its value.",
-          "badge": "Projekt"
-        },
-        "2": {
-          "title": "Map showing species distribution",
-          "description": "Biodiversity species distribution map",
-          "badge": "Projekt"
-        },
-        "3": {
-          "title": "EWF wrestling roleplaying page",
-          "description": "Move wordpress site with EWF wrestling roleplaying page to nextjs",
-          "badge": "Projekt"
-        },
-        "4": {
-          "title": "Gray wolf distribution map",
-          "description": "Interactive map visualizing gray wolf occurrences over time with year-based filtering.",
-          "badge": "Projekt"
-        }
-      }
+      "viewAll": "View all"
     }
   },
   "skills": {
@@ -109,12 +85,36 @@
     "outro": "Located in your favorite time zone. Available for freelance projects, full-time roles, and speaking engagements."
   },
   "footer": {
-    "text": "© {{year}} Frontend Portfolio. All rights reserved."
+    "text": "© {{year}} Software Developer Portfolio. All rights reserved."
   },
   "projectsPage": {
     "badge": "Projects",
     "title": "A selection of my work",
-    "description": "Here you can find a collection of my projects, ranging from web applications to data analysis and visualizations."
+    "description": "Here you can find a collection of my projects, ranging from web applications to data analysis and visualizations.",
+    "ctaLabel": "View project",
+    "comingSoon": "Coming soon",
+    "projects": {
+      "1": {
+        "title": "OKLCH Color Explorer",
+        "description": "Explore how Lightness, Chroma, Hue and Alpha variations affect your OKLCH colors. Click any color to copy its value.",
+        "badge": "Projekt"
+      },
+      "2": {
+        "title": "Map showing species distribution",
+        "description": "Biodiversity species distribution map",
+        "badge": "Projekt"
+      },
+      "3": {
+        "title": "EWF wrestling roleplaying page",
+        "description": "Migrated and restored a legacy WordPress website, resolving legacy theme issues, database compatibility and deprecated shortcodes",
+        "badge": "Projekt"
+      },
+      "4": {
+        "title": "Gray wolf distribution map",
+        "description": "Interactive map visualizing gray wolf occurrences over time with year-based filtering.",
+        "badge": "Projekt"
+      }
+    }
   }
 }
 

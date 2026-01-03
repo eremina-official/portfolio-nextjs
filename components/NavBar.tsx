@@ -101,7 +101,11 @@ export function NavBar() {
           } md:border-0 md:bg-transparent md:p-0 md:shadow-none md:ring-0 md:w-auto md:max-w-none md:transform-none md:items-center md:h-auto`}
         >
           {navLinks.map((link, index) => {
-            const isActive = normalizedPath === link.href;
+            const isActive =
+              link.href === "/"
+                ? normalizedPath === "/"
+                : normalizedPath === link.href ||
+                  normalizedPath.startsWith(`${link.href}/`);
 
             return (
               <Link

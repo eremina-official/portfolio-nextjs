@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Frontend Developer Portfolio",
-  description: "Showcasing work, skills, and contact information for a frontend developer.",
+  title: "Software Developer Portfolio",
+  description: "Showcasing work, skills, and contact information for a software developer.",
 };
 
 type Props = {
@@ -27,8 +27,6 @@ type Props = {
 };
 
 export default async function RootLayout({ children, params }: Props) {
-  console.log("locale");
-
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -46,7 +44,7 @@ export default async function RootLayout({ children, params }: Props) {
               <div className="mx-auto w-full">{children}</div>
             </main>
             <footer className="border-t border-border-200 bg-background py-6 text-center text-sm text-zinc-500">
-              © {new Date().getFullYear()} Frontend Portfolio. All rights reserved.
+              © {new Date().getFullYear()} Software Developer Portfolio. All rights reserved.
             </footer>
           </div>
         </NextIntlClientProvider>

@@ -23,31 +23,7 @@
     "projectsSection": {
       "title": "Wybrane projekty",
       "subtitle": "Najciekawsze realizacje oraz eksperymenty projektowe.",
-      "viewAll": "Zobacz wszystkie",
-      "ctaLabel": "Zobacz projekt",
-      "comingSoon": "Wkrótce",
-      "projects":  {
-        "1": {
-          "title": "OKLCH Color Explorer",
-          "description": "Eksploruj, jak zmiany Jasności, Chromy, Odcienia i Przezroczystości wpływają na kolory OKLCH. Kliknij dowolny kolor, aby skopiować jego wartość.",
-          "badge": "Projekt"
-        },
-        "2": {
-          "title": "Mapa pokazująca rozmieszczenie gatunków",
-          "description": "Mapa pokazująca rozmieszczenie gatunków",
-          "badge": "Projekt"
-        },
-        "3": {
-          "title": "Strona roleplaying EWF Wrestling",
-          "description": "Przeniesienie wordpress site z EWF wrestling roleplaying page do nextjs",
-          "badge": "Projekt"
-        },
-        "4": {
-          "title": "Mapa rozmieszczenia wilka szarego",
-          "description": "Interaktywna mapa prezentująca występowanie wilka szarego w czasie z filtrowaniem po roku.",
-          "badge": "Projekt"
-        }
-      }
+      "viewAll": "Zobacz wszystkie"
     }
   },
   "skills": {
@@ -109,12 +85,36 @@
     "outro": "Pracuję zdalnie w Twojej ulubionej strefie czasowej. Dostępny na projekty freelancerskie, pełnoetatowe i wystąpienia."
   },
   "footer": {
-    "text": "© {{year}} Frontend Portfolio. Wszelkie prawa zastrzeżone."
+    "text": "© {{year}} Software Developer Portfolio. Wszelkie prawa zastrzeżone."
   },
   "projectsPage": {
     "badge": "Projekty",
-    "title": "Wybór moich prac",
-    "description": "Tutaj znajdziesz zbiór moich projektów, od aplikacji internetowych po analizę i wizualizacje danych."
+    "title": "Moje projekty",
+    "description": "Tutaj znajdziesz zbiór moich projektów, od aplikacji internetowych po analizę i wizualizacje danych.",
+    "ctaLabel": "Zobacz projekt",
+    "comingSoon": "Wkrótce",
+    "projects":  {
+      "1": {
+        "title": "OKLCH Color Explorer",
+        "description": "Eksploruj, jak zmiany Jasności, Chromy, Odcienia i Przezroczystości wpływają na kolory OKLCH. Kliknij dowolny kolor, aby skopiować jego wartość.",
+        "badge": "Projekt"
+      },
+      "2": {
+        "title": "Mapa pokazująca rozmieszczenie gatunków",
+        "description": "Mapa pokazująca rozmieszczenie gatunków",
+        "badge": "Projekt"
+      },
+      "3": {
+        "title": "Strona roleplaying EWF Wrestling",
+        "description": "Zmigrowałam i przywróciłam starszą stronę WordPress, rozwiązując problemy z przestarzałym motywem, z bazą danych oraz z zdeprecjonowanymi shortcode’ami",
+        "badge": "Projekt"
+      },
+      "4": {
+        "title": "Mapa rozmieszczenia wilka szarego",
+        "description": "Interaktywna mapa prezentująca występowanie wilka szarego w czasie z filtrowaniem po roku.",
+        "badge": "Projekt"
+      }
+    }
   }
 }
 

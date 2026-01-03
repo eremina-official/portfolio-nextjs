@@ -1,14 +1,15 @@
 import Link from "next/link";
 import type { Project } from "@/types/projectTypes";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 type CardProps = {
   project: Project;
 };
 
 export function Card({ project }: CardProps) {
-  const t = useTranslations("home.projectsSection");
-  const { id, href, tech, github } = project;
+  const t = useTranslations("projectsPage");
+  const { id, href, tech, github, thumbnail } = project;
   const currentProject = `projects.${id}`;
 
   return (
@@ -23,8 +24,18 @@ export function Card({ project }: CardProps) {
           aria-label="Open project details"
         />
 
+        <div
+          className={`
+            relative mb-4 h-40 rounded-xl
+            bg-cover bg-center
+            after:absolute after:inset-0
+            ${thumbnail ? '' : 'after:bg-gradient-to-t after:from-black/60'} transition-transform duration-300 group-hover:scale-102
+          `}
+          style={{ backgroundImage: `url(${project.thumbnail})` }}
+        />
+
+
         <div className="flex items-center justify-between">
-          {/* <h3 className="text-lg font-semibold text-text transition duration-800 group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent group-hover:bg-clip-text group-hover:text-transparent"> */}
           <h3
             className="text-lg font-semibold bg-clip-text text-transparent 
             transition-all duration-500 
