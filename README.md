@@ -46,6 +46,7 @@ TODO
 - Light / dark / custom theme support via CSS variables
 - Use Motion to animate side menu on mobile
 - Add tests (test for most important translations, tests for error boundaries)
+- Set up CI/CD pipeline
 - Add readme files for projects
 - Analyze ai-generated code in the projects, remove redundant code
 - Handle loading states
