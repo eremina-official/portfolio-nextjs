@@ -1,4 +1,4 @@
-export type Tag = "web" | "mobile" | "data" | "game";
+export type Tag = "web" | "mobile" | "data" | "game" | "css";
 
 export interface Project {
   id: number;

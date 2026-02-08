@@ -37,4 +37,13 @@ export const projects: Project[] = [
     thumbnail: "/projects/gray-wolf-map.png",
     tags: ["web"],
   },
+  {
+    id: 5,
+    title: "Glassmorphism CSS Experiments",
+    tech: ["Next.js", "Tailwind CSS", "CSS"],
+    href: "/projects/glassmorphism-css-experiments",
+    github: "https://github.com/eremina-official/portfolio-nextjs/tree/main/app/%5Blocale%5D/projects/glassmorphism-css-experiments",
+    thumbnail: "/projects/glassmorphism-css.png",
+    tags: ["web", "css"],
+  },
 ];

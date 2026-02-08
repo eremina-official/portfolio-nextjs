@@ -8,7 +8,7 @@ interface ThemeControllerProps {
 export function ThemeController({ darkMode, setDarkMode }: ThemeControllerProps) {
   return (
     <div className="sticky top-4 z-50 mt-16">
-      <div className="bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-4 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-white/80 border border-gray-200/50 rounded-2xl p-4 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex-1 text-center md:text-left">
           <h2 className="text-base font-semibold text-gray-900">Theme</h2>
           <p className="text-gray-500 text-xs hidden md:block">

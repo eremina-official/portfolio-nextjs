@@ -113,6 +113,11 @@
         "title": "Gray wolf distribution map",
         "description": "Interactive map visualizing gray wolf occurrences over time with year-based filtering.",
         "badge": "Projekt"
+      },
+      "5": {
+        "title": "Glassmorphism CSS Experiments",
+        "description": "A collection of glassmorphism UI components",
+        "badge": "Project"
       }
     }
   },

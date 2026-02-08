@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function GlassmorphismPage() {
   return (
-    <div className="relative scroll-smooth bg-black/20">
+    <div className="relative scroll-smooth bg-black/30">
       <div className="flex flex-col gap-8 pb-8">
         <GlassmorphismLoginForm />
         <GlassmorphismLoginFormRed />

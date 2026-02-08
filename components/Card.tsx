@@ -57,7 +57,7 @@ export function Card({ project }: CardProps) {
           <ul className="mt-4 flex flex-wrap gap-2 text-sm text-zinc-500">
             {tech.map((item) => (
               <li key={item} className="rounded-full px-4 py-1 text-xs font-medium
-             bg-primary/10 backdrop-blur-sm
+             bg-primary/10
              border border-primary/20
              text-accent/80">
                 {item}

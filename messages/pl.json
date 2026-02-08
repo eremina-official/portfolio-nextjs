@@ -108,10 +108,15 @@
         "title": "Strona roleplaying EWF Wrestling",
         "description": "Zmigrowałam i przywróciłam starszą stronę WordPress, rozwiązując problemy z przestarzałym motywem, z bazą danych oraz z zdeprecjonowanymi shortcode’ami",
         "badge": "Projekt"
-      },
+      },  
       "4": {
         "title": "Mapa rozmieszczenia wilka szarego",
         "description": "Interaktywna mapa prezentująca występowanie wilka szarego w czasie z filtrowaniem po roku.",
+        "badge": "Projekt"
+      },
+      "5": {
+        "title": "Eksperymenty Glassmorphism CSS",
+        "description": "Kolekcja komponentów z wykorzystaniem techniki glassmorphism, w tym formularz logowania i karty produktów premium z różnymi motywami.",
         "badge": "Projekt"
       }
     }
