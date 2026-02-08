@@ -9,13 +9,14 @@ export function GlassmorphismLoginFormRed() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/projects/glassmorphism-css-experiments/background.png"
-            alt="Frozen mountain lake at sunset"
+            src="/projects/glassmorphism-css-experiments/background-red-dark.png"
+            alt="Smooth dark red gradient background"
             fill
             className="object-cover"
             priority
             sizes="100vw"
           />
+          <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
         </div>
 
         {/* Back Link */}
@@ -44,7 +45,7 @@ export function GlassmorphismLoginFormRed() {
         </div>
 
         {/* Main Content Container */}
-        <div className="relative z-10 w-full max-w-md p-8 mx-4">
+        <div className="relative isolate z-10 w-full max-w-md p-8 mx-4">
           {/* Glassmorphism Card */}
           <div
             className="

@@ -24,6 +24,7 @@ export function Card({ project }: CardProps) {
           aria-label="Open project details"
         />
 
+        {/* Card image */}
         <div
           className={`
             relative mb-4 h-40 rounded-xl overflow-hidden
@@ -35,7 +36,7 @@ export function Card({ project }: CardProps) {
           style={{ backgroundImage: `url(${project.thumbnail})` }}
         />
 
-
+        {/* Card title */}
         <div className="flex items-center justify-between">
           <h3
             className="text-lg font-semibold bg-clip-text text-transparent 

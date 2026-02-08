@@ -48,7 +48,7 @@ export function GlassmorphismLoginForm() {
 
           <Link
             href="/projects"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-white transition-all duration-300 hover:scale-105 group"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -69,7 +69,7 @@ export function GlassmorphismLoginForm() {
           </Link>
         </div>
 
-        <div className="relative z-10 w-full max-w-md p-8 mx-4">
+        <div className="relative isolate z-10 w-full max-w-md p-8 mx-4">
           <div
             className="
               relative max-h-[700px] rounded-3xl max-w-md p-6
