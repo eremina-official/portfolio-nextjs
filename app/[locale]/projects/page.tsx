@@ -29,7 +29,7 @@ export default function Projects() {
         <p className="text-lg text-subtext">{t("description")}</p>
       </section>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <Card key={project.id} project={project} />
         ))}

@@ -63,7 +63,7 @@ export default function Home() {
             {t("projectsSection.viewAll")}
           </Link>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <Card key={project.id} project={project} />
           ))}
