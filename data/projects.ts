@@ -12,12 +12,12 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Map showing species distribution",
-    tech: ["React", "TypeScript", "Framer Motion", "MapLibre GL"],
-    href: "#",
-    github: "#",
+    title: "Coffee Market ETL",
+    tech: ["Python", "Pydantic", "SQL", "Azure", "PowerBI"],
+    href: "/projects/coffee-market-etl",
+    github: "https://github.com/eremina-official/data-coffee-market",
     thumbnail: "",
-    tags: ["web"],
+    tags: ["data"],
   },
   {
     id: 3,

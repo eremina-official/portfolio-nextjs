@@ -26,8 +26,9 @@ export function Card({ project }: CardProps) {
 
         <div
           className={`
-            relative mb-4 h-40 rounded-xl
+            relative mb-4 h-40 rounded-xl overflow-hidden
             bg-cover bg-center
+            before:absolute before:inset-0 before:bg-black/0 group-hover:before:bg-black/30 before:transition-colors before:duration-300 before:z-10
             after:absolute after:inset-0
             ${thumbnail ? '' : 'after:bg-gradient-to-t after:from-black/60'} transition-transform duration-300 group-hover:scale-102
           `}
