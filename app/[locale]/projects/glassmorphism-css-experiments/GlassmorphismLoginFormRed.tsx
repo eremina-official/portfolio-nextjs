@@ -54,7 +54,6 @@ export function GlassmorphismLoginFormRed() {
               rounded-2xl
               border-2 border-red-500/70
               bg-red-500/20
-              backdrop-blur-md
               p-8
               max-h-[700px]
               flex flex-col
@@ -69,6 +68,14 @@ export function GlassmorphismLoginFormRed() {
               `
             }}
           >
+            <div
+              className="
+                absolute inset-0
+                rounded-2xl
+                backdrop-blur-md
+              "
+            />
+
             {/* Shine effect / Highlight */}
             <div className="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] bg-gradient-to-br from-red-500/10 via-transparent to-transparent rotate-45 pointer-events-none" />
 
@@ -89,7 +96,7 @@ export function GlassmorphismLoginFormRed() {
                 </label>
                 <input
                   type="email"
-                  id="email"
+                  id="email-form-red"
                   className="
                     w-full
                     px-4 py-3
@@ -120,7 +127,7 @@ export function GlassmorphismLoginFormRed() {
                 </label>
                 <input
                   type="password"
-                  id="password"
+                  id="password-form-red"
                   className="
                     w-full
                     px-4 py-3

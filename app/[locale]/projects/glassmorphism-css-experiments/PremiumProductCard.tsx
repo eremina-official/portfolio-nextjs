@@ -53,7 +53,6 @@ export function PremiumProductCard() {
                 rounded-3xl
                 border border-black/20
                 bg-black/30
-                backdrop-blur-md
                 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]
                 p-6
                 flex flex-col
@@ -62,6 +61,14 @@ export function PremiumProductCard() {
                 transition-all duration-300 hover:bg-black/50
               "
             >
+              <div
+                className="
+                  absolute inset-0
+                  rounded-3xl
+                  backdrop-blur-md
+                "
+            />
+
               {/* Glossy overlay */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent pointer-events-none" />
 

@@ -69,16 +69,27 @@ export function GlassmorphismLoginForm() {
           </Link>
         </div>
 
+        {/* isolate is used for backdrop-filter compositing bug fix */}
         <div className="relative isolate z-10 w-full max-w-md p-8 mx-4">
           <div
             className="
               relative max-h-[700px] rounded-3xl max-w-md p-6
               bg-white/10
-              backdrop-blur-md
               text-white
               shadow-[0_8px_30px_rgba(0,0,0,0.25)]
             "
           >
+            {/* blur layer, fix for the backdrop-filter compositing bug
+                the backdrop-blur-md moved from the container to the inner pseudo-layer
+                to avoid the appearance of extra tiles on scroll/resize 
+            */}
+            <div
+              className="
+                absolute inset-0
+                rounded-3xl
+                backdrop-blur-md
+              "
+            />
             {/* Glass rim (thickness illusion) */}
             <div
               className="
@@ -122,7 +133,7 @@ export function GlassmorphismLoginForm() {
                   </label>
                   <input
                     type="email"
-                    id="email"
+                    id="email-form"
                     className="
                       w-full
                       px-4 py-3
@@ -153,7 +164,7 @@ export function GlassmorphismLoginForm() {
                   </label>
                   <input
                     type="password"
-                    id="password"
+                    id="password-form"
                     className="
                       w-full
                       px-4 py-3
@@ -228,6 +239,7 @@ export function GlassmorphismLoginForm() {
             ></div>
           </div>
         </div>
+
       </section>
     </div>
   );
