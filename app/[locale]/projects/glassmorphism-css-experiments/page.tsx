@@ -10,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function GlassmorphismPage() {
   return (
-    <div className="relative scroll-smooth bg-black/30">
-      <div className="flex flex-col gap-8 pb-8">
+    // z-1 is used to create corrent stacking context for mobile menu
+    <div className="relative scroll-smooth bg-black/30 z-1">
+      <div className="flex flex-col">
         <GlassmorphismLoginForm />
         <GlassmorphismLoginFormRed />
         <PremiumProductCard />

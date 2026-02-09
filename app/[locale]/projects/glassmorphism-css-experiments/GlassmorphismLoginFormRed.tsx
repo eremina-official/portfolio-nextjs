@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export function GlassmorphismLoginFormRed() {
   return (
-    <div className="flex flex-col items-center justify-center w-full shrink-0 min-h-screen">
+    <div className="flex flex-col items-center justify-center w-full px-4 shrink-0 min-h-screen">
       <h2 className="text-3xl font-light text-white/90 tracking-widest uppercase text-center w-full mb-8 pt-8">Glassmorphism Login</h2>
-      <section className="relative w-full max-w-7xl mx-4 h-[80vh] flex items-center justify-center rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
+      <section className="relative w-full max-w-7xl h-[80vh] flex items-center justify-center rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -45,7 +45,7 @@ export function GlassmorphismLoginFormRed() {
         </div>
 
         {/* Main Content Container */}
-        <div className="relative isolate z-10 w-full max-w-md p-8 mx-4">
+        <div className="relative isolate z-10 w-full max-w-md p-8">
           {/* Glassmorphism Card */}
           <div
             className="

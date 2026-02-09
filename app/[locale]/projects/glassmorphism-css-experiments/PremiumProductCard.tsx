@@ -29,7 +29,7 @@ const products = [
 
 export function PremiumProductCard() {
   return (
-    <div className="flex flex-col items-center justify-center w-full shrink-0 min-h-screen py-12">
+    <div className="flex flex-col items-center justify-center w-full px-4 shrink-0 min-h-screen py-12">
       <h2 className="text-3xl font-light text-white/90 tracking-widest uppercase text-center w-full mb-12">Premium Collection</h2>
       <section className="relative w-full max-w-7xl mx-4 min-h-[80vh] flex flex-wrap items-center justify-center rounded-3xl overflow-hidden border border-white/20 shadow-2xl p-8 gap-16">
         {/* Background Image */}
@@ -51,8 +51,9 @@ export function PremiumProductCard() {
                 relative
                 overflow-hidden
                 rounded-3xl
-                border border-black/20
-                bg-black/30
+                bg-[rgba(0,0,0,0.6)]
+                border border-white/20
+                backdrop-blur-xxs
                 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]
                 p-6
                 flex flex-col
@@ -60,47 +61,16 @@ export function PremiumProductCard() {
                 group
                 transition-all duration-300 hover:bg-black/50
               "
+              style={{
+                boxShadow: 
+                  `0 8px 32px rgba(0, 0, 0, 0.1),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.5),
+                  inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+                  inset 0 0 6px 3px rgba(255, 255, 255, 0.3)`
+              }}
             >
-              <div
-                className="
-                  absolute inset-0
-                  rounded-3xl
-                  backdrop-blur-md
-                "
-            />
-
               {/* Glossy overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent pointer-events-none" />
-
-              {/* Black glass rim (thickness illusion) */}
-              <div
-                className="
-                  pointer-events-none absolute inset-0 rounded-3xl
-                  ring-5 ring-white/50
-                "
-              ></div>
-
-              <div
-                className="
-                  pointer-events-none absolute inset-[1px] rounded-[22px]
-                  ring-3 ring-neutral-400/50
-                "
-              ></div>
-
-              <div
-                className="
-                  pointer-events-none absolute inset-[2px] rounded-[22px]
-                  ring-2 ring-neutral-400/30
-                "
-              ></div>
-
-              <div
-                className="
-                  pointer-events-none absolute inset-[3px] rounded-[22px]
-                  ring-1 ring-neutral-400/20
-                "
-              ></div>
-
+              <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-black/5 pointer-events-none" />
 
               {/* Product Image */}
               <div className="relative w-64 h-64 mb-6 z-10 transition-transform duration-500 group-hover:scale-105">
