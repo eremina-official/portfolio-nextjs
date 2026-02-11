@@ -19,31 +19,6 @@ export function GlassmorphismLoginFormRed() {
           <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
         </div>
 
-        {/* Back Link */}
-        <div className="absolute top-6 left-6 z-20">
-          <Link
-            href="/projects"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-white transition-all duration-300 hover:scale-105 group"
-          >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              className="w-4 h-4 group-hover:-translate-x-1 transition-transform"
-            >
-              <path d="m12 19-7-7 7-7"/>
-              <path d="M19 12H5"/>
-            </svg>
-            <span>Back to Projects</span>
-          </Link>
-        </div>
-
         {/* Main Content Container */}
         <div className="relative isolate z-10 w-full max-w-md p-8">
           {/* Glassmorphism Card */}

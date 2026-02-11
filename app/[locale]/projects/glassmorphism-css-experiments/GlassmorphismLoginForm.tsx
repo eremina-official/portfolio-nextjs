@@ -302,7 +302,7 @@ export function GlassmorphismLoginForm() {
           </Link>
         </div>
 
-        <div className="relative isolate z-10 w-full min-w-[350px] max-w-md p-8 ">
+        <div className="relative isolate z-10 w-full min-w-[350px] max-w-md p-10 md:p-8">
           <div
             className="
               relative glass-card max-h-[700px] rounded-3xl max-w-md p-6

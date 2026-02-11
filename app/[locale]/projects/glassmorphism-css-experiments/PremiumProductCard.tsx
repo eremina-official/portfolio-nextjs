@@ -30,8 +30,8 @@ const products = [
 export function PremiumProductCard() {
   return (
     <div className="flex flex-col items-center justify-center w-full px-4 shrink-0 min-h-screen py-12">
-      <h2 className="text-3xl font-light text-white/90 tracking-widest uppercase text-center w-full mb-12">Premium Collection</h2>
-      <section className="relative w-full max-w-7xl mx-4 min-h-[80vh] flex flex-wrap items-center justify-center rounded-3xl overflow-hidden border border-white/20 shadow-2xl p-8 gap-16">
+      <h2 className="text-3xl font-light text-white/90 tracking-widest uppercase text-center w-full mb-12">Product Cards</h2>
+      <section className="relative w-full max-w-7xl mx-4 min-h-[80vh] flex flex-wrap items-center justify-center rounded-3xl overflow-hidden border border-white/20 shadow-2xl p-8 gap-8 md:gap-16">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
